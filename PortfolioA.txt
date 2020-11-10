@@ -21,6 +21,6 @@
 
 - Code then test it (unit tests) 
 
-6. UML
+6. Release Testing
 
 - Ctrl+Alt+Shift+U
