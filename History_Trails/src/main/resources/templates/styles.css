@@ -1,0 +1,19 @@
+body {
+    background-image: url("images/museum_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+
+h1 {
+    color: #ff71ac;
+    text-align: center;
+    font-size: 300%;
+    /*font-family: "DIN Next W01 Light";*/
+}
+p {
+    color: red;
+    text-align: left;
+}
