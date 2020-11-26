@@ -2,12 +2,16 @@ package com.SPE.historytrails.History_Trails;
 
 import org.springframework.stereotype.Controller;
 //import org.springframework.ui.Model;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class WebController {
+
+
 //    @GetMapping(value = "/hello")
     @RequestMapping("/")
     public String index(){
@@ -22,7 +26,11 @@ public class WebController {
 
     @GetMapping(value = "/SearchGallery.html")
     public String search(){
-        return "SearchGallery";
-    }
+        return "SearchGallery"; }
+
+//    @GetMapping(value = "/Gallery3.html")
+//    public String gallery3(){
+//        return "Gallery3";
+//    }
 }
 
