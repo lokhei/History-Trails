@@ -19,14 +19,14 @@ public class WebController {
         //First parameter is an attribute name, second parameter is an object to add.
         return "index";
     }
-    @GetMapping(value = "/QRCode.html")
+    @GetMapping(value = "/MShed.html")
     public String QRCode(){
-        return "QRCode";
+        return "MShed";
     }
 
-    @GetMapping(value = "/SearchGallery.html")
+    @GetMapping(value = "/BristolArtGallery.html")
     public String search(){
-        return "SearchGallery"; }
+        return "BristolArtGallery"; }
 
 //    @GetMapping(value = "/Gallery3.html")
 //    public String gallery3(){
