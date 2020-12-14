@@ -1,5 +1,5 @@
 body {
-    background-image: url("images/museum_background.jpg");
+    /*background-image: url("images/museum_background.jpg");*/
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -22,7 +22,9 @@ p {
 .header {
     padding: 60px;
     text-align: center;
-    background: lightgray;
+    background-image: url("images/museum_background.jpg");
+
+    /*background: lightgray;*/
     color: white;
 }
 

@@ -20,13 +20,17 @@ public class WebController {
         return "index";
     }
     @GetMapping(value = "/MShed.html")
-    public String QRCode(){
+    public String MShed(){
         return "MShed";
     }
 
     @GetMapping(value = "/BristolArtGallery.html")
-    public String search(){
+    public String BristolArtGallery(){
         return "BristolArtGallery"; }
+
+    @GetMapping(value = "/contact.html")
+    public String contact(){
+        return "contact"; }
 
 //    @GetMapping(value = "/Gallery3.html")
 //    public String gallery3(){
