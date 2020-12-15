@@ -14,7 +14,7 @@
 <body>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
     <a href="BristolArtGallery.html">Bristol Art Gallery</a>
     <a href="MShed.html">M Shed</a>
     <a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
@@ -31,8 +31,10 @@
 
     </div>
     <h1>History Trails</h1>
-    <img src="bristolMuseum_logo.png" alt = "bristol Museum Logo">
-    <img src="M_Shed_logo.jpg" alt="M Shed logo">
+
+    <img src="../static/images/M_Shed_logo.jpg" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
+    <img src="../static/images/bristolMuseum_logo.png" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
+
 </div>
 </header>
 <p>Free entry! Visit one of our locations today to explore our collections of art, film, photos, nature, personal accounts and history on display.</p>
@@ -72,7 +74,6 @@
         document.body.style.backgroundColor = "white";
     }
 
-    // document.write("Free entry! Visit one of our locations today to explore our collections of art, film, photos, nature, personal accounts and history on display.");
 
 </script>
 </body>
