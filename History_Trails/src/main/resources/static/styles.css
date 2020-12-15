@@ -12,8 +12,9 @@ h1 {
     font-size: 300%;
 }
 p {
-    color: red;
-    text-align: left;
+    color: black;
+    text-align: center;
+    font-size: larger;
 }
 
 .header .sidebar{
@@ -31,7 +32,22 @@ p {
 .header img{
     float:right;
 }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
 
+/* Create two equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
 
 /*sidebar*/
 
