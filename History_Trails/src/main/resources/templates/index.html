@@ -28,7 +28,39 @@
 <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
 <div class="header">
 
-    <p> </p>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <img src="../static/images/slideshow1.jpg" height="500px" width="100%" th:src="@{/images/slideshow1.jpg}"/>
+            <div class="text">Bristol Museum & Art Gallery</div>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="../static/images/slideshow2.jpeg" height="500px" width="100%" th:src="@{/images/slideshow2.jpeg}"/>
+            <div class="text">European Old Masters Gallery</div>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="../static/images/slideshow3.jpg" height="500px" width="100%" th:src="@{/images/slideshow3.jpg}"/>
+            <div class="text">MShed</div>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <div id="navbar">
