@@ -8,10 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History Trails</title>
     <link th:href="@{/styles.css}" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
 </head>
 
 <body>
+
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
@@ -24,20 +27,26 @@
 
 <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
 
-<header>
 <div class="header">
-    <div class = sidebar>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <a class ="sidebar">
+    <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+    </a>
 
-    </div>
-    <h1>History Trails</h1>
+    <a class="title">
+        <h1>History Trails</h1>
 
+    </a>
+
+    <a class="logos">
     <img src="../static/images/M_Shed_logo.jpg" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
     <img src="../static/images/bristolMuseum_logo.png" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
-
+    </a>
 </div>
-</header>
-<p>Free entry! Visit one of our locations today to explore our collections of art, film, photos, nature, personal accounts and history on display.</p>
+
+
+
+<div class="not-header">
+    <p>Free entry! Visit one of our locations today to explore our collections of art, film, photos, nature, personal accounts and history on display.</p>
 
     <div class = "row">
         <div class = "column">
@@ -59,22 +68,26 @@
 
         </div>
         </div>
-
+        </div>
 </div>
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
-        document.body.style.backgroundColor = "white";
-    }
 
 
-</script>
+
+
+<script src="../static/slideshow.js" th:src="@{/slideshow.js}"></script>
+<script src="../static/sidenav.js" th:src="@{/sidenav.js}"></script>
+
+
+
+
+
+<!--&lt;!&ndash; Load React. &ndash;&gt;-->
+<!--&lt;!&ndash; Note: when deploying, replace "development.js" with "production.min.js". &ndash;&gt;-->
+<!--<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>-->
+<!--<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>-->
+
+<!--&lt;!&ndash; Load our React component. &ndash;&gt;-->
+<!--<script src="like_button.js"></script>-->
+
 </body>
 </html>
