@@ -207,5 +207,20 @@ img {vertical-align: middle;}
 }
 
 
+/*----------footer-------*/
+.footer {
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    text-align: left;
+    padding: 40px;
+    margin-top: 30px;
+}
+
+.footer-text{
+    color: white;
+    padding:10px;
+
+}
 
 
