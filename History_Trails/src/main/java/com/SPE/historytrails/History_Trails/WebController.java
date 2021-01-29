@@ -10,23 +10,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WebController {
 
 
-//    @GetMapping(value = "/hello")
     @RequestMapping("/")
     public String index(){
 //        model.addAttribute("name", name);
         //First parameter is an attribute name, second parameter is an object to add.
         return "index";
     }
-    @GetMapping(value = "/MShed.html")
+    @GetMapping(value = "/MShed")
     public String MShed(){
         return "MShed";
     }
 
-    @GetMapping(value = "/BristolArtGallery.html")
+    @GetMapping(value = "/BristolArtGallery")
     public String BristolArtGallery(){
         return "BristolArtGallery"; }
 
-    @GetMapping(value = "/contact.html")
+    @GetMapping(value = "/contact")
     public String contact(){
         return "contact"; }
 
