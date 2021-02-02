@@ -1,9 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Trails</title>
+    <link th:href="@{/styles.css}" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
 </head>
+
 <body>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="BristolArtGallery">Bristol Art Gallery</a>
+    <a href="MShed">M Shed</a>
+    <a href="contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+</div>
+
+<div id="main">
+
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+
+    <div id="navbar">
+        <a class ="sidebar">
+            <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+        </a>
+
+        <a class="title">
+            <h1>M Shed</h1>
+        </a>
+
+        <a class="logos">
+            <img src="../static/images/M_Shed_logo.jpg" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
+        </a>
+
+    </div>
+
+    <div class="content">
+        <p>M Shed is a museum all about Bristol. Explore the city through time: its places, its people and their stories by viewing the colourful exhibits detailing history of the city and its people. Soon you'll be able to explore the galleries of the M Shed right here. Keep checking back for updates!</p>
+    </div>
+
+    <iframe width="620" height="500" allowfullscreen class="center"
+            src="https://www.youtube.com/embed/uY3hqEYTESM?autoplay=1">
+    </iframe>
+
+
+</div>
+
+</div>
+<div class="footer">
+    <div class="footer-text">Bristol Museum & Art Gallery</div>
+    <div class="footer-text">MShed</div>
+
+</div>
+</div>
+
+<script src="../static/sticky-header.js" th:src="@{/sticky-header.js}"></script>
+<script src="../static/sidenav.js" th:src="@{/sidenav.js}"></script>
+
+
+
+
+
+<!--&lt;!&ndash; Load React. &ndash;&gt;-->
+<!--&lt;!&ndash; Note: when deploying, replace "development.js" with "production.min.js". &ndash;&gt;-->
+<!--<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>-->
+<!--<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>-->
+
+<!--&lt;!&ndash; Load our React component. &ndash;&gt;-->
+<!--<script src="like_button.js"></script>-->
+
 </body>
 </html>
