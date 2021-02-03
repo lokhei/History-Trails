@@ -8,11 +8,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History Trails</title>
     <link th:href="@{/BristolArt.css}" rel="stylesheet" />
+    <link th:href="@{/styles.css}" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 </head>
+
 <body>
-<div class="btn-group">
-    <button class="button" onclick = "window.location.href='Gallery3'" style="vertical-align:middle"><span>Gallery 3</span></button>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="BristolArtGallery">Bristol Art Gallery</a>
+    <a href="MShed">M Shed</a>
+    <a href="contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
 </div>
 
+
+
+<div id="main">
+
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+
+    <div id="navbar">
+        <a class ="sidebar">
+            <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+        </a>
+
+        <a class="title">
+            <h1>Bristol Museum & Art Gallery </h1>
+        </a>
+
+        <a class="logos">
+            <img src="../static/images/bristolMuseum_logo.png" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
+        </a>
+
+    </div>
+
+    <div class="content">
+        <p>Opened in 1905, Bristol Museum & Art Gallery houses the city’s world class collections, from dinosaurs and diamonds to magnificent fine art and Egyptian mummies. Twenty galleries and a changing programme of blockbuster exhibitions tell the story of the world from the beginning of time to the present day. Take a look at some of the featured galleries below!</p>
+    </div>
+
+    <div class="container">
+        <img src="../static/images/gallery1.jpeg"  class="center" th:src="@{images/gallery1.jpeg}"/>
+        <button class="btn" > Gallery 1 </button>
+    </div>
+
+    <div class="container">
+        <img src="../static/images/gallery2.jpeg"  class="center" th:src="@{images/gallery2.jpeg}"/>
+        <button class="btn" > Gallery 2 </button>
+    </div>
+
+
+    <div class="container">
+        <img src="../static/images/Gallery3.png"  class="center" th:src="@{images/Gallery3.png}"/>
+        <button class="btn" onclick = "window.location.href='Gallery3'"> Gallery 3 </button>
+    </div>
+
+    <div class="container">
+        <img src="../static/images/gallery4.jpeg"  class="center" th:src="@{images/gallery4.jpeg}"/>
+        <button class="btn" > Gallery 4 </button>
+    </div>
+
+    <div class="container">
+        <img src="../static/images/gallery5.jpeg"  class="center" th:src="@{images/gallery5.jpeg}"/>
+        <button class="btn" > Gallery 5 </button>
+    </div>
+
+    <div class="container">
+        <img src="../static/images/gallery6.jpeg"  class="center" th:src="@{images/gallery6.jpeg}"/>
+        <button class="btn" > Gallery 6 </button>
+    </div>
+
+    <div class="container">
+        <img src="../static/images/gallery7.jpeg"  class="center" th:src="@{images/gallery7.jpeg}"/>
+        <button class="btn" > Gallery 7 </button>
+    </div>
+
+
+
+
+
+</div>
+
+<div class="footer">
+    <div class="footer-text">Bristol Museum & Art Gallery</div>
+    <div class="footer-text">MShed</div>
+
+</div>
+
+<script src="../static/sticky-header.js" th:src="@{/sticky-header.js}"></script>
+<script src="../static/sidenav.js" th:src="@{/sidenav.js}"></script>
+
 </body>
-</html
+</html>
