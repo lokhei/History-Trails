@@ -12,6 +12,13 @@ p {
     font-size: larger;
 }
 
+h2{
+    text-align: center;
+    font-size: 250%;
+
+
+}
+
 /*-----------header start (slideshow)------*/
 .header {
     padding: 15px;
@@ -272,12 +279,13 @@ img {vertical-align: middle;}
 
 /*----------footer-------*/
 .footer {
-    bottom: 0;
+    margin-bottom: 0;
     width: 100%;
     background-color: black;
     text-align: left;
     padding: 40px;
     margin-top: 30px;
+    display:block;
 }
 
 .footer-text{
