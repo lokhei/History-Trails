@@ -53,8 +53,8 @@
                 <label for="fname">First Name:</label>
                 <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-                <label for="email">Email Address:</label>
-                <input type="text" id="email" name="Email address" placeholder="someone@email.com">
+                <label for="email">Email Address:</label> <span style="color:#ff0000">*</span>
+                <input type="text" id="email" name="Email address" placeholder="someone@email.com" required >
 
                 <label for="subject">Subject:</label>
                 <select id="subject" name="subject">
@@ -63,9 +63,8 @@
                     <option value="Other">Other</option>
                 </select>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" placeholder="Comment..." style="height:200px"></textarea>
-
+                <label for="message">Message:</label> <span style="color:#ff0000">*</span>
+                <textarea id="message" name="message" placeholder="Comment..." style="height:200px" required></textarea>
                 <input type="submit" value="Submit">
 
             </form>
