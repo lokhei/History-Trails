@@ -12,6 +12,14 @@ p {
     font-size: larger;
 }
 
+h1{
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 250%;
+    font-weight: bold;
+
+}
+
 h2{
     text-align: center;
     font-size: 250%;
