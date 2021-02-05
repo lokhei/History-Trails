@@ -14,16 +14,22 @@ public class JSONServer
     @RequestMapping("/Gallery3")
 
     public String Gallery3() {
-        JSONObject doc = requestJSON("https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&facet=medium&facet=object_type","","");
+        JSONObject doc = requestJSON("https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type","","");
         String response = "";
         // If the project exists, get it's name from the JSON doc
         if(doc != null) {
             Iterable<JSONObject> objects = (Iterable<JSONObject>) doc.get("records");
+            //int i = 0;
             for(JSONObject obj : objects) {
+//                System.out.printf("i = %d", i);
+//                System.out.println();
                 JSONObject field = (JSONObject) obj.get("fields");
                 String imageLink = (String) field.get("link_to_additional_information");
-                String body = "<HTML><body> <a href=" + imageLink + ">" + field.get("title_of_object") + "</a></body></HTML>" + "<br>\n" + " by " + field.get("artist");
-                response += body + "<br>\n\n\n\n</br>";
+                if (imageLink != null) {
+                    //i++;
+                    String body = "<HTML><body> <a href=" + imageLink + ">" + field.get("title_of_object") + "</a></body></HTML>" + "<br>\n" + " by " + field.get("artist");
+                    response += body + "<br>\n\n\n\n</br>";
+                }
             }
         }
         return response;
