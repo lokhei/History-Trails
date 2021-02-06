@@ -23,8 +23,7 @@ public class JSONServer
             for(JSONObject obj : objects) {
 //                System.out.printf("i = %d", i);
 //                System.out.println();
-                JSONObject field = (JSONObject) obj.get("fields");
-                String imageLink = (String) field.get("link_to_additional_information");
+                JSONObject field = (JSONObject) obj.get("fields");String imageLink = (String) field.get("link_to_additional_information");
                 if (imageLink != null) {
                     //i++;
                     String body = "<HTML><body> <a href=" + imageLink + ">" + field.get("title_of_object") + "</a></body></HTML>" + "<br>\n" + " by " + field.get("artist");
