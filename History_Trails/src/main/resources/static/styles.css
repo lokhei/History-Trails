@@ -23,10 +23,13 @@ h1{
 h2{
     text-align: center;
     font-size: 250%;
-
-
 }
 
+h3{
+    text-align: left;
+    font-size: 200%;
+    color: white;
+}
 /*-----------header start (slideshow)------*/
 .header {
     padding: 15px;
@@ -294,7 +297,7 @@ img {vertical-align: middle;}
     margin-bottom: 0;
     width: 100%;
     background-color: black;
-    text-align: left;
+    /*text-align: left;*/
     padding: 40px;
     margin-top: 30px;
     display:block;
@@ -305,6 +308,40 @@ img {vertical-align: middle;}
     padding:10px;
 
 }
+
+.footer-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer-column{
+    width: 15%;
+    float: left;
+    padding: 3%;
+    border-right: 2px solid white;
+    display: inline;
+}
+
+
+.footer .fa {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+
+}
+.footer .fa:hover {
+    opacity: 0.7;
+}
+
+.footer .fa-facebook, .fa-twitter, .fa-instagram, .fa-youtube {
+    color:white;
+    background: #717171;
+}
+
 
 
  /* SEARCH */
