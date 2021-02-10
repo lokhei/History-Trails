@@ -29,9 +29,21 @@ public class WebController {
     public String contact(){
         return "contact"; }
 
-//    @GetMapping(value = "/Gallery3.html")
-//    public String gallery3(){
-//        return "Gallery3";
-//    }
+    @GetMapping(value = "/Gallery2")
+    public String gallery2(){
+        return "Gallery2";
+    }
+    @GetMapping(value = "/Gallery3")
+    public String gallery3(){
+        return "Gallery3";
+    }
+    @GetMapping(value = "/Gallery4")
+    public String gallery4(){
+        return "Gallery4";
+    }
+    @GetMapping(value = "/Gallery5")
+    public String gallery5(){
+        return "Gallery5";
+    }
 }
 

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 public class JSONServer
 {
-    @RequestMapping("/Gallery3")
+    @RequestMapping("/Gallery3Test")
 
     public String Gallery3() {
         JSONObject doc = requestJSON("https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type","","");
