@@ -1,5 +1,4 @@
 body {
-    /*background-image: url("images/museum_background.jpg");*/
     background-repeat: no-repeat;
     background-size: cover;    background-attachment: fixed;
     margin: 0;
@@ -21,7 +20,7 @@ h1{
 
 h2{
     text-align: center;
-    font-size: 250%;
+    font-size: 40px;
 }
 
 h3{
@@ -150,6 +149,7 @@ img {vertical-align: middle;}
     h1{
         font-size: 20px;
     }
+    h2{font-size: 20px;}
     .logos img{
         height: 25px;
         width: 25px;
@@ -212,18 +212,11 @@ img {vertical-align: middle;}
 .center{
     display: block;
     margin-left: 25%;
-    /*margin-right: 50px;*/
     width: 50%;
 }
 
 .right{
-    /*float: left;*/
     align: left;
-    /*flex: 40%;*/
-    /*padding: 0 10%;*/
-    /*text-align: center;*/
-    /*display: inline;*/
-    /*position: relative;*/
 }
 
 .white-text{
@@ -285,9 +278,10 @@ img {vertical-align: middle;}
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
+@media screen and (max-width: 600px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    .sidenav{opacity: 90%;}
 }
 
 

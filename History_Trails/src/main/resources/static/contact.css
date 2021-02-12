@@ -44,4 +44,8 @@ input[type=submit]:hover {
         width: 80%;
         margin: 10%;
     }
+    input[type=submit]{
+        padding: 10px;
+    }
+
 }
