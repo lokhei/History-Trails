@@ -1,8 +1,7 @@
 body {
     /*background-image: url("images/museum_background.jpg");*/
     background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background-size: cover;    background-attachment: fixed;
     margin: 0;
 }
 
@@ -15,7 +14,7 @@ p {
 h1{
     text-align: center;
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 250%;
+    font-size: 40px;
     font-weight: bold;
 
 }
@@ -30,6 +29,9 @@ h3{
     font-size: 200%;
     color: white;
 }
+
+
+
 /*-----------header start (slideshow)------*/
 .header {
     padding: 15px;
@@ -117,13 +119,17 @@ img {vertical-align: middle;}
     display: inline-block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 10px;
     text-decoration: none;
 }
 .logos{
     float:right;
     text-align: center;
+}
 
+.logos img{
+    height: 80px;
+    width: 80px;
 }
 .sticky {
     position: fixed;
@@ -136,9 +142,19 @@ img {vertical-align: middle;}
 }
 
 .sticky + .content {
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
+
+@media screen and (max-width: 600px) {
+    h1{
+        font-size: 20px;
+    }
+    .logos img{
+        height: 25px;
+        width: 25px;
+    }
+}
 
 /*-----------top navbar end ------*/
 
