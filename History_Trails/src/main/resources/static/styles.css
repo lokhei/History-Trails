@@ -25,7 +25,7 @@ h2{
 
 h3{
     text-align: left;
-    font-size: 200%;
+    font-size: 30px;
     color: white;
 }
 
@@ -201,7 +201,7 @@ img {vertical-align: middle;}
 }
 
 .right{
-    align: left;
+    text-align: left;
 }
 
 .white-text{
@@ -265,34 +265,38 @@ img {vertical-align: middle;}
 
 /*----------footer-------*/
 .footer {
-    margin-bottom: 0;
     width: 100%;
     background-color: black;
-    /*text-align: left;*/
-    padding: 40px;
-    margin-top: 30px;
+    padding: 10px 30px;
+    margin: 30px 0 0;
     display:block;
+    bottom: 0;
 }
 
-.footer-text{
-    color: white;
-    padding:10px;
 
+.footer-row{
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.footer-row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+/*.footer-row:after {*/
+/*    content: "";*/
+/*    display: table;*/
+/*    clear: both;*/
+/*}*/
 
 .footer-column{
-    width: 15%;
+    width: 200px;
     float: left;
-    padding: 3%;
+    padding: 2px 20px;
     border-right: 2px solid white;
-    display: inline;
 }
+
+
+.footer-column p{
+    color: white;
+}
+
 
 
 .footer .fa {
@@ -302,16 +306,14 @@ img {vertical-align: middle;}
     text-decoration: none;
     margin: 5px 2px;
     border-radius: 50%;
+    color:white;
+    background: #717171;
 
 }
 .footer .fa:hover {
     opacity: 0.7;
 }
 
-.footer .fa-facebook, .fa-twitter, .fa-instagram, .fa-youtube {
-    color:white;
-    background: #717171;
-}
 
 @media screen and (max-width: 600px) {
     h1{
@@ -322,10 +324,27 @@ img {vertical-align: middle;}
         height: 25px;
         width: 25px;
     }
+    .footer h3{font-size: 18px;}
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
     .sidenav{opacity: 90%;}
     .text {font-size: 11px}
+    .footer-column{
+        width: 85px;
+        padding: 5px 10px;
+    }
+    .footer .fa{
+        font-size: 15px;
+        padding:5px;
+    }
+    .footer p{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 285px) {
+    .footer-column{width:33%}
+
 }
 
  /* SEARCH */
