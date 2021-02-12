@@ -131,33 +131,16 @@ img {vertical-align: middle;}
     width: 100%;
 }
 
+.content{
+    padding-top: 10px;
+}
+
 .sticky + .content {
-    padding-top: 60px;
+    padding-top: 200px;
 }
 
 
-/*.header .sidebar{*/
-/*    !*text-align: left;*!*/
-/*    !*padding-left: 40px;*!*/
-/*    float:left;*/
-
-/*}*/
-/*.header title{*/
-/*    float:left;*/
-/*    color: white;*/
-/*    !*font-size: ;*!*/
-/*    padding: 10px;*/
-/*    text-align: left;*/
-
-
-/*}*/
 /*-----------top navbar end ------*/
-
-
-/*-------------Content--------------*/
-.content {
-    margin-top: 30px; /* Add a top margin to avoid content overlay */
-}
 
 
 /*------image links to website----------*/
