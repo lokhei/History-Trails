@@ -9,30 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WebController {
 
-
     @RequestMapping("/")
-    public String index(){
-//        model.addAttribute("name", name);
-        //First parameter is an attribute name, second parameter is an object to add.
-        return "index";
-    }
+    public String index(){ return "index"; }
     @GetMapping(value = "/MShed")
     public String MShed(){
         return "MShed";
     }
-
     @GetMapping(value = "/BristolArtGallery")
-    public String BristolArtGallery(){
-        return "BristolArtGallery"; }
-
+    public String BristolArtGallery(){ return "BristolArtGallery"; }
     @GetMapping(value = "/contact")
-    public String contact(){
-        return "contact"; }
-
+    public String contact(){ return "contact"; }
     @GetMapping(value = "/Gallery2")
-    public String gallery2(){
-        return "Gallery2";
-    }
+    public String gallery2(){ return "Gallery2"; }
     @GetMapping(value = "/Gallery3")
     public String gallery3(){
         return "Gallery3";
@@ -45,5 +33,7 @@ public class WebController {
     public String gallery5(){
         return "Gallery5";
     }
+    @GetMapping(value = "/test")
+    public String test() {return "test";}
 }
 
