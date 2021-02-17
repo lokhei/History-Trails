@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gallery 4</title>
+    <title>Gallery 3</title>
     <link rel="stylesheet" href="./myStyle.css">
 </head>
 <body>
@@ -16,74 +16,39 @@
 </script>
 
 <script>
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        var myObj = JSON.parse(this.responseText);
+    let url = 'https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type';
+    fetch(url)
+        .then(res => res.json())
+        .then((out) => {
 
-        var titleOfObject;
-        var artist;
-        var artistsBirthDeath;
-        var medium;
-        var objectType;
-        var yearOfCreation;
-        var linkToAdditionalInformtion;
+            document.getElementById("gallery4").innerHTML =
+                `
+                 <h1 class="gallery3-title"> GALLERY 4 </h1>
 
-        if (myObj != null) {
-            for (var i = 0; i < myObj.nhits; i++) {
-                if (myObj.records[i].fields.gallery == "Gallery 4") {
-                    if (myObj.records[i].fields.title_of_object != null) {
-                        // document.write("Title of Object: ".bold() + myObj.records[i].fields.title_of_object + "<br>")
-                        titleOfObject = myObj.records[i].fields.title_of_object;
-                    }
-                    if (myObj.records[i].fields.artist != null) {
-                        // document.write("Artist: ".bold() + myObj.records[i].fields.artist + "<br>")
-                        artist = myObj.records[i].fields.artist;
-                    }
-                    if (myObj.records[i].fields.artist_s_birth_death != null) {
-                        // document.write("Artist`s Birth & Death: ".bold() + myObj.records[i].fields.artist_s_birth_death + "<br>")
-                        artistsBirthDeath = myObj.records[i].fields.artist_s_birth_death;
-                    }
-                    if (myObj.records[i].fields.medium  != null) {
-                        // document.write("Medium: ".bold() + myObj.records[i].fields.medium  + "<br>")
-                        medium = myObj.records[i].fields.medium;
-                    }
-                    if (myObj.records[i].fields.object_type != null) {
-                        // document.write("Object Type: ".bold() + myObj.records[i].fields.object_type + "<br>")
-                        objectType = myObj.records[i].fields.object_type;
-                    }
-                    if (myObj.records[i].fields.year_of_creation != null) {
-                        // document.write("Label".bold() + "<br>" +  myObj.records[i].fields.label + "<br>")
-                        yearOfCreation = myObj.records[i].fields.label;
-                    }
-                    if (myObj.records[i].fields.link_to_additional_information != null) {
-                        var imageLink =  (myObj.records[i].fields.link_to_additional_information);
-                        linkToAdditionalInformtion = makeClickable(imageLink);
-                        // document.write("Link to additional information: ".bold() + makeClickable(imageLink) + "<br>")
-                    }
-                    // document.write ("<br>");
-                }
-            }
-        }
-        document.getElementById("gallery4").innerHTML =
-            `
-            <h1 class="gallery3-title"> GALLERY 4 </h1>
-            ${(myObj.records).map(function (obj) {
-                if (obj.fields.image_of_object)
-                return `
+                 ${out.records.map(function (obj) {
+                    if (obj.fields.gallery == "Gallery 4" && obj.fields.image_of_object) {
+                        var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
+                        var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? "Additional information: " + makeClickable(obj.fields.link_to_additional_information) : "";
+
+                        return `
                         <div class="object">
-
-                            <h2 class="title-of-object">${obj.fields.image_of_object.id}</h2>
+                            <img class="object-image" src="/images/${obj.fields.image_of_object.id}.jpg"/>
+                            <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
+                            <h3 class="name-of-artist"> <strong>${obj.fields.artist}</strong></h3>
+                            <h4 class="artist-birth-death"> <strong>${artistBirthDeath}</strong></h4>
+                            <p> ${obj.fields.label}</p>
+                            <p> ${linkToAdditionalInformation}</p>
 
                         </div>
 
                      `
-            }).join('')}
+                    }
+                }).join('')}
+                 <p>There are ${out.nhits} objects in all the galleries.</p>
 
-            `
-
-    };
-    xmlhttp.open("GET", "https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type", true);
-    xmlhttp.send();
+                `
+        })
+        .catch(err => { throw err });
 </script>
 
 </body>
