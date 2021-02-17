@@ -6,10 +6,11 @@ body {
     margin: 0;
 }
 
-/*img {*/
-/*    max-width: 100%;*/
-/*    height: auto;*/
-/*}*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 .gallery3-title {
     text-align: center;
@@ -37,3 +38,8 @@ body {
     margin: 0 0 1rem 0;
 }
 
+.object-image {
+    float: left;
+    width: 40%;
+    margin-right: 15px;
+}
