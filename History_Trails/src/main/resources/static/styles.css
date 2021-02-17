@@ -7,7 +7,8 @@ body {
 p {
     color: black;
     text-align: center;
-    font-size: larger;
+    font-size: 20px;
+    padding: 0 10px;
 }
 
 h1{
@@ -147,13 +148,14 @@ img {vertical-align: middle;}
 /*------image links to website----------*/
 .row {
     padding: 30px 4px;
+    margin-bottom: 10px;
 }
 
 .column {
     float: left;
     width: 50%;
     flex: 40%;
-    padding: 0 10%;
+    padding: 10px 10%;
     text-align: center;
     display: inline;
     position: relative;
@@ -184,7 +186,8 @@ img {vertical-align: middle;}
 }
 .text-on-image{
     position: absolute;
-    bottom: 20px;
+    width: 20%;
+    bottom: 10px;
     right: 20%;
     background-color: black;
     color: white;
@@ -211,24 +214,6 @@ img {vertical-align: middle;}
     font-size: 30px;
 }
 
-/* makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-        margin: 20px 0;
-    }
-    .text-on-image{
-        right:10%
-    }
-    .center{
-        width:90%;
-        margin: 5%;
-    }
-    .white-text{
-        font-size: 16px;
-    }
-
-}
 
 /*-------------sidebar ------------------*/
 
@@ -312,6 +297,7 @@ img {vertical-align: middle;}
 
 .footer-column p{
     color: white;
+    text-align: left;
 }
 
 
@@ -332,21 +318,61 @@ img {vertical-align: middle;}
 }
 
 
+@media screen and (max-width: 1100px) {
+    .text-on-image{
+        width: 30%;
+
+    }
+}
+@media screen and (max-width: 800px) {
+    .column{
+        padding: 10px 5%;
+    }
+    .text-on-image{
+        right: 10%;
+    }
+}
+
 @media screen and (max-width: 600px) {
+    /*header*/
+    p{
+        font-size: 16px;
+    }
     h1{
         font-size: 20px;
     }
     h2{font-size: 20px;}
+    .text {font-size: 11px}
     .logos img{
         height: 25px;
         width: 25px;
     }
-
-    .footer h3{font-size: 18px;}
+    /*slideshow*/
+    .mySlides img{
+        height: 250px;
+    }
+    /*image links*/
+    .column {
+        width: 100%;
+    }
+    .text-on-image{
+        right: 5%;
+        font-size: 12px;
+    }
+    .center{
+        width:90%;
+        margin: 5%;
+    }
+    .white-text{
+        font-size: 16px;
+    }
+    /*sidenav*/
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
     .sidenav{opacity: 90%;}
-    .text {font-size: 11px}
+
+    /*footer*/
+    .footer h3{font-size: 18px;}
     .footer-column{
         width: 85px;
         padding: 5px 10px;
@@ -361,9 +387,31 @@ img {vertical-align: middle;}
 }
 
 @media screen and (max-width: 285px) {
-    .footer-column{width:33%}
+    .footer-column{
+        width:30%;
+        margin-right: 2px;
+        padding: 0;
+    }
+
+
+    .website-image img{
+        height: 250px;
+    }
+    iframe{
+        height: 300px;
+    }
+    .text-on-image{
+        width: 35%;
+        padding: 5px;
+        font-size: 12px;
+
+    }
 
 }
+
+
+
+
 
  /* SEARCH */
 
