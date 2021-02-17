@@ -147,11 +147,27 @@ img {vertical-align: middle;}
 /*------image links to website----------*/
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
     padding: 30px 4px;
-
 }
+
+.column {
+    float: left;
+    width: 50%;
+    flex: 40%;
+    padding: 0 10%;
+    text-align: center;
+    display: inline;
+    position: relative;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
 
 .row2 {
     display: flex;
@@ -161,14 +177,6 @@ img {vertical-align: middle;}
 
 }
 
-/* Create two equal columns that sits next to each other */
-.column {
-    flex: 40%;
-    padding: 0 10%;
-    text-align: center;
-    display: inline;
-    position: relative;
-}
 .image-fade {
     opacity: 1;
     display: block;
@@ -211,7 +219,17 @@ img {vertical-align: middle;}
     font-size: xx-large;
 }
 
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        margin: 20px 0;
+    }
+    .text-on-image{
+        right:10%
+    }
 
+}
 
 /*-------------sidebar ------------------*/
 
@@ -349,9 +367,6 @@ img {vertical-align: middle;}
 
  /* SEARCH */
 
- * {
-   box-sizing: border-box;
- }
 
  /* Style the search field */
  form.example input[type=text] {
@@ -379,4 +394,5 @@ img {vertical-align: middle;}
  form.example button:hover {
    background: black;
  }
+
 
