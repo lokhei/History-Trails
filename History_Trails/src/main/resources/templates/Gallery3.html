@@ -14,17 +14,22 @@
     fetch(url)
         .then(res => res.json())
         .then((out) => {
+
             document.getElementById("gallery3").innerHTML =
                 `
                  <h1 class="gallery3-title"> GALLERY 3 </h1>
+
                  ${out.records.map(function (obj) {
-                     return `
+                     if (obj.fields.gallery == "Gallery 3 - European Old Masters" && obj.fields.image_of_object) {
+                         return `
                         <div class="object">
+                            <img class="object-image" src="/images/${obj.fields.image_of_object.id}.jpg"/>
                             <h2 class="title-of-object">${obj.fields.title_of_object}</h2>
 
                         </div>
 
                      `
+                     }
                 }).join('')}
                  <p>There are ${out.nhits} objects in all the galleries.</p>
 

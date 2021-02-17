@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Gallery 4</title>
+    <link rel="stylesheet" href="./myStyle.css">
 </head>
 <body>
+
+<div id = "gallery4"></div>
 
 <script>
     function makeClickable(url) {
@@ -16,36 +19,67 @@
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         var myObj = JSON.parse(this.responseText);
-        document.write("Gallery 4".bold() + "<br>" + "<br>");
+
+        var titleOfObject;
+        var artist;
+        var artistsBirthDeath;
+        var medium;
+        var objectType;
+        var yearOfCreation;
+        var linkToAdditionalInformtion;
+
         if (myObj != null) {
             for (var i = 0; i < myObj.nhits; i++) {
                 if (myObj.records[i].fields.gallery == "Gallery 4") {
                     if (myObj.records[i].fields.title_of_object != null) {
-                        document.write("Title of Object: ".bold() + myObj.records[i].fields.title_of_object + "<br>")
+                        // document.write("Title of Object: ".bold() + myObj.records[i].fields.title_of_object + "<br>")
+                        titleOfObject = myObj.records[i].fields.title_of_object;
                     }
                     if (myObj.records[i].fields.artist != null) {
-                        document.write("Artist: ".bold() + myObj.records[i].fields.artist + "<br>")
+                        // document.write("Artist: ".bold() + myObj.records[i].fields.artist + "<br>")
+                        artist = myObj.records[i].fields.artist;
                     }
                     if (myObj.records[i].fields.artist_s_birth_death != null) {
-                        document.write("Artist`s Birth & Death: ".bold() + myObj.records[i].fields.artist_s_birth_death + "<br>")
+                        // document.write("Artist`s Birth & Death: ".bold() + myObj.records[i].fields.artist_s_birth_death + "<br>")
+                        artistsBirthDeath = myObj.records[i].fields.artist_s_birth_death;
                     }
                     if (myObj.records[i].fields.medium  != null) {
-                        document.write("Medium: ".bold() + myObj.records[i].fields.medium  + "<br>")
+                        // document.write("Medium: ".bold() + myObj.records[i].fields.medium  + "<br>")
+                        medium = myObj.records[i].fields.medium;
                     }
                     if (myObj.records[i].fields.object_type != null) {
-                        document.write("Object Type: ".bold() + myObj.records[i].fields.object_type + "<br>")
+                        // document.write("Object Type: ".bold() + myObj.records[i].fields.object_type + "<br>")
+                        objectType = myObj.records[i].fields.object_type;
                     }
                     if (myObj.records[i].fields.year_of_creation != null) {
-                        document.write("Label".bold() + "<br>" +  myObj.records[i].fields.label + "<br>")
+                        // document.write("Label".bold() + "<br>" +  myObj.records[i].fields.label + "<br>")
+                        yearOfCreation = myObj.records[i].fields.label;
                     }
                     if (myObj.records[i].fields.link_to_additional_information != null) {
                         var imageLink =  (myObj.records[i].fields.link_to_additional_information);
-                        document.write("Link to additional information: ".bold() + makeClickable(imageLink) + "<br>")
+                        linkToAdditionalInformtion = makeClickable(imageLink);
+                        // document.write("Link to additional information: ".bold() + makeClickable(imageLink) + "<br>")
                     }
-                    document.write ("<br>");
+                    // document.write ("<br>");
                 }
             }
         }
+        document.getElementById("gallery4").innerHTML =
+            `
+            <h1 class="gallery3-title"> GALLERY 4 </h1>
+            ${(myObj.records).map(function (obj) {
+                if (obj.fields.image_of_object)
+                return `
+                        <div class="object">
+
+                            <h2 class="title-of-object">${obj.fields.image_of_object.id}</h2>
+
+                        </div>
+
+                     `
+            }).join('')}
+
+            `
 
     };
     xmlhttp.open("GET", "https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type", true);
