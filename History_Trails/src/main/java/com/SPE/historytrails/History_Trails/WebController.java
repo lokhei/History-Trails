@@ -33,7 +33,7 @@ public class WebController {
     public String gallery5(){
         return "Gallery5";
     }
-    @GetMapping(value = "/test")
-    public String test() {return "test";}
+    @GetMapping(value = "/tester")
+    public String test() {return "tester";}
 }
 
