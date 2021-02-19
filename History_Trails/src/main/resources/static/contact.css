@@ -49,3 +49,11 @@ input[type=submit]:hover {
     }
 
 }
+
+@media screen and (min-height: 1000px) {
+.footer{
+    bottom: 0;
+    position: absolute;
+
+}
+}
