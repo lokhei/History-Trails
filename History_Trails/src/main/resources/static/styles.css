@@ -148,7 +148,6 @@ img {vertical-align: middle;}
 /*------image links to website----------*/
 .row {
     padding: 30px 4px;
-    margin-bottom: 10px;
 }
 
 .column {
@@ -352,8 +351,13 @@ img {vertical-align: middle;}
         height: 250px;
     }
     /*image links*/
+    .row{
+        padding: 0;
+    }
     .column {
         width: 100%;
+        padding: 10px 5%;
+
     }
     .text-on-image{
         right: 5%;
