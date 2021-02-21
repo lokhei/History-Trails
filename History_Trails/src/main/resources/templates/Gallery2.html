@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link th:href="@{/myStyle.css}" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Trails</title>
     <link th:href="@{/styles.css}" rel="stylesheet" />
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Gallery 2</title>
-    <link rel="stylesheet" href="./myStyle.css">
 </head>
 <body>
 
@@ -20,95 +24,108 @@
     </div>
     <a href="contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
 </div>
-<div id="navbar">
-    <a class ="sidebar">
-        <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
-    </a>
-    <a class="title" href = "/"><h1>History Trails</h1></a>
-    <a class="logos">
-        <img src="../static/images/M_Shed_logo.jpg" alt = "MShed logo" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
-        <img src="../static/images/bristolMuseum_logo.png" alt = "Bristol Museums and Art Gallery logo" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
-    </a>
 
-</div>
+<div id="main">
 
-<div id = "gallery2"></div>
+    <div id="navbar">
+        <a class ="sidebar">
+            <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+        </a>
+        <a class="title" href = "/"><h1>History Trails</h1></a>
+        <a class="logos">
+            <img src="../static/images/M_Shed_logo.jpg" alt = "MShed logo" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
+            <img src="../static/images/bristolMuseum_logo.png" alt = "Bristol Museums and Art Gallery logo" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
+        </a>
 
-<script>
-    function makeClickable(url) {
-        return String.prototype.link ? url.link(url) : '<a href="'+url+'">'+url+'</a>';
-    }
-</script>
+    </div>
 
-<script>
-    let url = 'https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type';
-    fetch(url)
-        .then(res => res.json())
-        .then((out) => {
 
-            document.getElementById("gallery2").innerHTML =
-                `
-                 <h1 class="gallery3-title"> GALLERY 2 </h1>
+    <div class="content">
 
-                 ${out.records.map(function (obj) {
-                    if (obj.fields.gallery == "Gallery 2" && obj.fields.image_of_object) {
-                        var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
-                        var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? "Additional information: " + makeClickable(obj.fields.link_to_additional_information) : "";
+    <div id = "gallery2"></div>
 
-                        return `
-                        <div class="object">
-                            <img class="object-image" alt = "${obj.fields.title_of_object}" src="/images/${obj.fields.image_of_object.id}.jpg"/>
-                            <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
-                            <h3 class="name-of-artist"> <strong>${obj.fields.artist}</strong></h3>
-                            <h4 class="artist-birth-death"> <strong>${artistBirthDeath}</strong></h4>
-                            <p> ${obj.fields.label}</p>
-                            <p> ${linkToAdditionalInformation}</p>
+    <script>
+        function makeClickable(url) {
+            return String.prototype.link ? url.link(url) : '<a href="'+url+'">'+url+'</a>';
+        }
+    </script>
 
-                        </div>
+    <script>
+        let url = 'https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type';
+        fetch(url)
+            .then(res => res.json())
+            .then((out) => {
 
-                     `
-                    }
-                }).join('')}
-                 <p>There are ${out.nhits} objects in all the galleries.</p>
+                document.getElementById("gallery2").innerHTML =
+                    `
+                     <h1 class="gallery3-title"> GALLERY 2 </h1>
 
-                `
-        })
-        .catch(err => { throw err });
-</script>
+                     ${out.records.map(function (obj) {
+                        if (obj.fields.gallery == "Gallery 2" && obj.fields.image_of_object) {
+                            var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
+                            var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? "Additional information: " + makeClickable(obj.fields.link_to_additional_information) : "";
 
-<div class="footer">
-    <h3>Connect with us</h3>
+                            return `
+                            <div class="object">
+                                <img class="object-image" alt = "${obj.fields.title_of_object}" src="/images/${obj.fields.image_of_object.id}.jpg"/>
+                                <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
+                                <h3 class="name-of-artist"> <strong>${obj.fields.artist}</strong></h3>
+                                <h4 class="artist-birth-death"> <strong>${artistBirthDeath}</strong></h4>
+                                <p> ${obj.fields.label}</p>
+                                <p> ${linkToAdditionalInformation}</p>
 
-    <div class="footer-row">
-        <div class = "footer-column">
-            <p>Bristol Museums<p>
+                            </div>
+
+                         `
+                        }
+                    }).join('')}
+                     <p>There are ${out.nhits} objects in all the galleries.</p>
+
+                    `
+            })
+            .catch(err => { throw err });
+    </script>
+
+    </div>
+    <div class="footer">
+        <h3>Connect with us</h3>
+
+        <div class="footer-row">
+            <div class = "footer-column">
+                <p>Bristol Museums<p>
+            </div>
+            <div class = "footer-column">
+                <p>MShed</p>
+            </div>
+            <div class = "footer-column">
+                <p>Bristol Museum & Art Gallery<p>
+
+            </div>
         </div>
-        <div class = "footer-column">
-            <p>MShed</p>
-        </div>
-        <div class = "footer-column">
-            <p>Bristol Museum & Art Gallery<p>
 
+        <div class="footer-row">
+
+            <div class = "footer-column">
+                <a href="https://www.instagram.com/bristolmuseums/?hl=en" class="fa fa-instagram"></a>
+                <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" class="fa fa-youtube"></a>
+            </div>
+            <div class = "footer-column">
+
+                <a href="https://www.facebook.com/mshedbristol/" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/mshedbristol" class="fa fa-twitter"></a>
+            </div>
+            <div class = "footer-column">
+                <a href="https://www.facebook.com/BristolMuseumandArtGallery/" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/bristolmuseum" class="fa fa-twitter"></a>
+            </div>
         </div>
     </div>
 
-    <div class="footer-row">
-
-        <div class = "footer-column">
-            <a href="https://www.instagram.com/bristolmuseums/?hl=en" class="fa fa-instagram"></a>
-            <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" class="fa fa-youtube"></a>
-        </div>
-        <div class = "footer-column">
-
-            <a href="https://www.facebook.com/mshedbristol/" class="fa fa-facebook"></a>
-            <a href="https://twitter.com/mshedbristol" class="fa fa-twitter"></a>
-        </div>
-        <div class = "footer-column">
-            <a href="https://www.facebook.com/BristolMuseumandArtGallery/" class="fa fa-facebook"></a>
-            <a href="https://twitter.com/bristolmuseum" class="fa fa-twitter"></a>
-        </div>
-    </div>
 </div>
+
+
+
+
 <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}"></script>
 <script src="../static/sidenav.js" th:src="@{/sidenav.js}"></script>
 </body>
