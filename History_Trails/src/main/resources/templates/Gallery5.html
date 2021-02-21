@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gallery 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Trails</title>
+    <link th:href="@{/styles.css}" rel="stylesheet" />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./myStyle.css">
 </head>
 <body>
@@ -50,6 +54,38 @@
         })
         .catch(err => { throw err });
 </script>
+<div class="footer">
+    <h3>Connect with us</h3>
 
+    <div class="footer-row">
+        <div class = "footer-column">
+            <p>Bristol Museums<p>
+        </div>
+        <div class = "footer-column">
+            <p>MShed</p>
+        </div>
+        <div class = "footer-column">
+            <p>Bristol Museum & Art Gallery<p>
+
+        </div>
+    </div>
+
+    <div class="footer-row">
+
+        <div class = "footer-column">
+            <a href="https://www.instagram.com/bristolmuseums/?hl=en" class="fa fa-instagram"></a>
+            <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" class="fa fa-youtube"></a>
+        </div>
+        <div class = "footer-column">
+
+            <a href="https://www.facebook.com/mshedbristol/" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/mshedbristol" class="fa fa-twitter"></a>
+        </div>
+        <div class = "footer-column">
+            <a href="https://www.facebook.com/BristolMuseumandArtGallery/" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/bristolmuseum" class="fa fa-twitter"></a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
