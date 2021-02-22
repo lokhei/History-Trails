@@ -1,119 +1,104 @@
-<!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History Trails</title>
-    <link th:href="@{/contact.css}" rel="stylesheet" />
     <link th:href="@{/styles.css}" rel="stylesheet" />
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link th:href="@{/contact.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
 </head>
-
 
 <body>
 
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-    <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
-    <a href="BristolArtGallery"><i class = "fas fa-landmark"></i> Bristol Art Gallery</a>
-    <a href="MShed"><i class = "fas fa-landmark"></i> M Shed</a>
-    <div class = "current_tab">
-    <a href="contact"><i class="fa fa-fw fa-envelope"></i> <b>Contact</b></a>
+<div id="navbar">
+    <a class="title" href = "/"><h1>History Trails</h1></a>
+    <div class="logos">
+        <img src="../static/images/M_Shed_logo.jpg" alt = "MShed logo" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
+        <img src="../static/images/bristolMuseum_logo.png" alt = "Bristol Museums and Art Gallery logo" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
+    </div>
+
+    <div class = "topnav">
+        <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="BristolArtGallery"><i class = "fas fa-landmark"></i> Bristol Art Gallery</a>
+        <a href="MShed"><i class = "fas fa-landmark"></i>  M Shed</a>
+        <a href="contact" class = "current_tab"><i class="fa fa-fw fa-envelope"></i> Contact</a>
     </div>
 
 </div>
 
-<div id="main">
-
-    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-
-    <div id="navbar">
-        <a class ="sidebar">
-            <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
-        </a>
-        <a class="title" href = "/"><h1>History Trails</h1></a>
-        <a class="logos">
-            <img src="../static/images/M_Shed_logo.jpg" alt = "MShed logo" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
-            <img src="../static/images/bristolMuseum_logo.png" alt = "Bristol Museums and Art Gallery logo" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
-        </a>
-
-    </div>
 
 
-    <div class="content">
+<div class="content">
+    <div class="container">
+        <form action="action_page.php">
+            <h2> Contact Us</h2>
 
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-        <div class="container">
-            <form action="action_page.php">
-                <h2> Contact Us</h2>
+            <label for="email">Email Address:</label> <span style="color:#ff0000">*</span>
+            <input type="text" id="email" name="Email address" placeholder="someone@email.com" required >
 
-                <label for="fname">First Name:</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <label for="subject">Subject:</label>
+            <select id="subject" name="subject">
+                <option value="MShed">MShed</option>
+                <option value="Bristol Museum & Art Gallery">Bristol Museum & Art Gallery</option>
+                <option value="Other">Other</option>
+            </select>
 
-                <label for="email">Email Address:</label> <span style="color:#ff0000">*</span>
-                <input type="text" id="email" name="Email address" placeholder="someone@email.com" required >
+            <label for="message">Message:</label> <span style="color:#ff0000">*</span>
+            <textarea id="message" name="message" placeholder="Comment..." style="height:200px" required></textarea>
+            <input type="submit" value="Submit">
 
-                <label for="subject">Subject:</label>
-                <select id="subject" name="subject">
-                    <option value="MShed">MShed</option>
-                    <option value="Bristol Museum & Art Gallery">Bristol Museum & Art Gallery</option>
-                    <option value="Other">Other</option>
-                </select>
-
-                <label for="message">Message:</label> <span style="color:#ff0000">*</span>
-                <textarea id="message" name="message" placeholder="Comment..." style="height:200px" required></textarea>
-                <input type="submit" value="Submit">
-
-            </form>
-        </div>
-
-    </div>
-
-
-    <div class="footer">
-        <h3>Connect with us</h3>
-
-        <div class="footer-row">
-            <div class = "footer-column">
-                <p>Bristol Museums<p>
-            </div>
-            <div class = "footer-column">
-                <p>MShed</p>
-            </div>
-            <div class = "footer-column">
-                <p>Bristol Museum & Art Gallery<p>
-
-            </div>
-        </div>
-
-        <div class="footer-row">
-
-            <div class = "footer-column">
-                <a href="https://www.instagram.com/bristolmuseums/?hl=en" class="fa fa-instagram"></a>
-                <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" class="fa fa-youtube"></a>
-            </div>
-            <div class = "footer-column">
-
-                <a href="https://www.facebook.com/mshedbristol/" class="fa fa-facebook"></a>
-                <a href="https://twitter.com/mshedbristol" class="fa fa-twitter"></a>
-            </div>
-            <div class = "footer-column">
-                <a href="https://www.facebook.com/BristolMuseumandArtGallery/" class="fa fa-facebook"></a>
-                <a href="https://twitter.com/bristolmuseum" class="fa fa-twitter"></a>
-            </div>
-        </div>
+        </form>
     </div>
 
 </div>
+
+
+<div class="footer">
+    <h3>Connect with us</h3>
+
+    <div class="footer-row">
+        <div class = "footer-column">
+            <p>Bristol Museums<p>
+        </div>
+        <div class = "footer-column">
+            <p>MShed</p>
+        </div>
+        <div class = "footer-column">
+            <p>Bristol Museum & Art Gallery<p>
+
+        </div>
+    </div>
+
+    <div class="footer-row">
+
+        <div class = "footer-column">
+            <a href="https://www.instagram.com/bristolmuseums/?hl=en" class="fab fa-instagram"></a>
+            <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" class="fab fa-youtube"></a>
+        </div>
+        <div class = "footer-column">
+
+            <a href="https://www.facebook.com/mshedbristol/" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/mshedbristol" class="fab fa-twitter"></a>
+        </div>
+        <div class = "footer-column">
+            <a href="https://www.facebook.com/BristolMuseumandArtGallery/" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/bristolmuseum" class="fab fa-twitter "></a>
+        </div>
+    </div>
+</div>
+
 
 
 
 <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}"></script>
-<script src="../static/sidenav.js" th:src="@{/sidenav.js}"></script>
 
 </body>
 </html>

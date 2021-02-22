@@ -17,7 +17,6 @@ h1{
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 40px;
     font-weight: bold;
-
 }
 
 h2{
@@ -119,7 +118,8 @@ img {vertical-align: middle;}
     text-decoration: none;
 }
 .logos{
-    float:right;
+    padding: 30px 10px 0;
+    float: right;
     text-align: center;
 }
 
@@ -141,6 +141,41 @@ img {vertical-align: middle;}
     padding-top: 100px;
 }
 
+.topnav {
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #717171;
+}
+
+.topnav a.current_tab {
+    background-color: #000000;
+    color: white;
+}
+
+@media screen and (max-width: 450px) {
+    .topnav a{
+        font-size: 12px;
+        padding: 1px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .topnav a{
+        font-size: 8px;
+    }
+}
 
 /*-----------top navbar end ------*/
 
@@ -216,52 +251,6 @@ img {vertical-align: middle;}
 
 /*-------------sidebar ------------------*/
 
-/* The side navigation menu */
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 3; /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-.sidenav .current_tab{
-    background-color: #555555;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-}
 
 
 /*----------footer-------*/
@@ -280,12 +269,6 @@ img {vertical-align: middle;}
     flex-wrap: wrap;
 }
 
-/*.footer-row:after {*/
-/*    content: "";*/
-/*    display: table;*/
-/*    clear: both;*/
-/*}*/
-
 .footer-column{
     width: 200px;
     float: left;
@@ -301,7 +284,7 @@ img {vertical-align: middle;}
 
 
 
-.footer .fa {
+.footer .fab {
     padding: 20px;
     font-size: 30px;
     text-align: center;
@@ -312,7 +295,7 @@ img {vertical-align: middle;}
     background: #717171;
 
 }
-.footer .fa:hover {
+.footer .fab:hover {
     opacity: 0.7;
 }
 
@@ -370,10 +353,6 @@ img {vertical-align: middle;}
     .white-text{
         font-size: 16px;
     }
-    /*sidenav*/
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-    .sidenav{opacity: 90%;}
 
     /*footer*/
     .footer h3{font-size: 18px;}
@@ -381,7 +360,7 @@ img {vertical-align: middle;}
         width: 85px;
         padding: 5px 10px;
     }
-    .footer .fa{
+    .footer .fab{
         font-size: 15px;
         padding:5px;
     }
