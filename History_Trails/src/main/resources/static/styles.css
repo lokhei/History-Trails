@@ -391,6 +391,59 @@ img {vertical-align: middle;}
 }
 
 
+/*-------------galleries------------------*/
+
+/*
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.gallery3-title {
+    text-align: center;
+    font-weight: normal;
+    font-size: 2.6rem;
+}
+
+.object {
+    max-width: 730px;
+    padding: 20px;
+    margin: 30px auto;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.411);
+    overflow: hidden;
+}
+
+.object h4 {
+    margin: 0 0 6px 0;
+}
+
+#searchWrapper {
+    position: relative;
+}
+
+.title-of-object {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 0 0 1rem 0;
+}
+
+.object-image {
+    float: left;
+    width: 40%;
+    margin-right: 15px;
+}
+
+.container {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+
+
 
 
 

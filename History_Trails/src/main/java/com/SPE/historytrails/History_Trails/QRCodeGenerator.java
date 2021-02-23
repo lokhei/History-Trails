@@ -1,4 +1,4 @@
-package com.journaldev.qrcode.generator;
+package com.SPE.historytrails.History_Trails;
 
 import java.awt.Color;
 import java.awt.Graphics2D;

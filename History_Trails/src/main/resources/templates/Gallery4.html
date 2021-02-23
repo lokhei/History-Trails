@@ -2,16 +2,16 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link th:href="@{/myStyle.css}" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History Trails</title>
-    <link th:href="@{/styles.css}" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
-</head>
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>History Trails</title>
+        <link th:href="@{/myStyle.css}" rel="stylesheet" />
+        <link th:href="@{/navbar.css}" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    </head>
 <body>
 
 <div id="navbar">
@@ -33,7 +33,18 @@
 
 <div class="content">
 
-    <div id = "gallery4"></div>
+    <div class="container">
+        <h1>Gallery 4</h1>
+        <div id="searchWrapper">
+            <input
+                    type="text"
+                    name="searchBar"
+                    id="searchBar"
+                    placeholder="Search for an object"
+            />
+        </div>
+        <ul id="charactersList"></ul>
+    </div>
 
     <script>
         function makeClickable(url) {
@@ -42,21 +53,41 @@
     </script>
 
     <script>
-        let url = 'https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type';
-        fetch(url)
-            .then(res => res.json())
-            .then((out) => {
+        const charactersList = document.getElementById('charactersList');
+        const searchBar = document.getElementById('searchBar');
+        let hpCharacters = [];
 
-                document.getElementById("gallery4").innerHTML =
-                    `
-                     <h1 class="gallery3-title"> GALLERY 4 </h1>
+        searchBar.addEventListener('keyup', (e) => {
+            const searchString = e.target.value.toLowerCase();
 
-                     ${out.records.map(function (obj) {
-                        if (obj.fields.gallery == "Gallery 4" && obj.fields.image_of_object) {
-                            var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
-                            var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? "Additional information: " + makeClickable(obj.fields.link_to_additional_information) : "";
+            const filteredCharacters = hpCharacters.filter((obj) => {
+                var artistName = (obj.fields.artist) ? obj.fields.artist : "";
 
-                            return `
+                return (
+                    obj.fields.title_of_object.toLowerCase().includes(searchString) ||
+                    artistName.toLowerCase().includes(searchString)
+                );
+            });
+            displayCharacters(filteredCharacters);
+        });
+
+        const loadCharacters = async () => {
+            try {
+                const res = await fetch('https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type');
+                hpCharacters = (await res.json()).records;
+                displayCharacters(hpCharacters);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        const displayCharacters = (out) => {
+            const htmlString = out
+                .map((obj) => {
+                    if (obj.fields.gallery == "Gallery 4" && obj.fields.image_of_object) {
+                        var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
+                        var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? "Additional information: " + makeClickable(obj.fields.link_to_additional_information) : "";
+                        return `
                             <div class="object">
                                 <img class="object-image" alt = "${obj.fields.title_of_object}" src="/images/${obj.fields.image_of_object.id}.jpg"/>
                                 <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
@@ -64,17 +95,16 @@
                                 <h4 class="artist-birth-death"> <strong>${artistBirthDeath}</strong></h4>
                                 <p> ${obj.fields.label}</p>
                                 <p> ${linkToAdditionalInformation}</p>
-
                             </div>
+                        `
+                    }
+                })
+                .join('');
+            charactersList.innerHTML = htmlString;
+        };
 
-                         `
-                        }
-                    }).join('')}
-                     <p>There are ${out.nhits} objects in all the galleries.</p>
+        loadCharacters();
 
-                    `
-            })
-            .catch(err => { throw err });
     </script>
 </div>
 
@@ -112,6 +142,7 @@
         </div>
     </div>
 </div>
+
 
 
 <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}"></script>
