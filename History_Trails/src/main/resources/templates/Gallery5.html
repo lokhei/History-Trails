@@ -84,12 +84,12 @@
         const displayCharacters = (out) => {
             const htmlString = out
                 .map((obj) => {
-                    if (obj.fields.gallery == "Gallery 5 - Modern Art" && obj.fields.image_of_object) {
+                    if (obj.fields.gallery == "Gallery 5 - Modern Art") {
                         var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
                         var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? "Additional information: " + makeClickable(obj.fields.link_to_additional_information) : "";
                         return `
                             <div class="object">
-                                <img class="object-image" alt = "${obj.fields.title_of_object}" src="/images/${obj.fields.image_of_object.id}.jpg"/>
+
                                 <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
                                 <h3 class="name-of-artist"> <strong>${obj.fields.artist}</strong></h3>
                                 <h4 class="artist-birth-death"> <strong>${artistBirthDeath}</strong></h4>
