@@ -3,6 +3,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
+    font-family: Verdana, sans-serif;
 }
 
 p {
@@ -24,18 +25,11 @@ h2{
     font-size: 40px;
 }
 
-h3{
-    text-align: left;
-    font-size: 30px;
-    color: white;
-}
-
 
 
 /*-----------header start (slideshow)------*/
 
 * {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
 .mySlides {display: none;}
 img {vertical-align: middle;}
 

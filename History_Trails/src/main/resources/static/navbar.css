@@ -95,7 +95,11 @@
     bottom: 0;
 }
 
-
+.footer h3{
+    text-align: left;
+    font-size: 30px;
+    color: white;
+}
 .footer-row{
     display: flex;
     flex-wrap: wrap;
