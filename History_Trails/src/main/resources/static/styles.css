@@ -216,17 +216,15 @@ img {vertical-align: middle;}
     /*transition: .5s ease;*/
 
 }
-/*.website-image:hover .image-fade{*/
-/*    opacity:0.7;*/
-/*}*/
-
 .column a:hover .image-fade{
     opacity:0.7;
 }
 .column a:hover .gallery-description{
     opacity:0.7;
 }
-
+.column a:hover .text-on-image{
+    opacity:1;
+}
 .text-on-image{
     position: absolute;
     width: 20%;
@@ -253,9 +251,7 @@ img {vertical-align: middle;}
 }
 
 
-.website-image:hover .text-on-image{
-    opacity:1;
-}
+
 
 .center{
     display: block;
