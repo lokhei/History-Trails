@@ -212,6 +212,7 @@ img {vertical-align: middle;}
 .image-fade {
     opacity: 1;
     display: block;
+    float:left;
     /*transition: .5s ease;*/
 
 }
@@ -229,6 +230,20 @@ img {vertical-align: middle;}
     opacity: 0.7;
 
 }
+.gallery-description{
+    width: 50%;
+    background-color: #bbbbbb;
+    float: left;
+    height: 350px;
+    text-align: center;
+}
+
+.gallery-description p{
+    padding: 0 10px;
+    font-size: 15px;
+    text-align: left;
+}
+
 
 .website-image:hover .text-on-image{
     opacity:1;
