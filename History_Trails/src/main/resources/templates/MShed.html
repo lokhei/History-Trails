@@ -34,11 +34,34 @@
 
 <div class="content">
     <h1>  M Shed </h1>
-    <p>M Shed is a museum all about Bristol. Explore the city through time: its places, its people and their stories by viewing the colourful exhibits detailing history of the city and its people. Soon you'll be able to explore the galleries of the M Shed right here. Keep checking back for updates!</p>
+    <p>M Shed is a museum all about Bristol. It tells the story of the city and its unique place in the world. Explore the city through time: its places, its people and their stories by viewing the colourful exhibits detailing history of the city and its people. See amazing film and photographs, listen to moving personal stories, encounter rare and quirky objects and add your own memories of Bristol through the interactive displays. </p>
 
-    <iframe width="620" height="500" allowfullscreen class="center"
-            src="https://www.youtube.com/embed/uY3hqEYTESM?autoplay=1">
-    </iframe>
+    <div class = "row">
+        <div class = "column">
+            <a href= 'https://www.bristolmuseums.org.uk/m-shed/whats-at/bristol-places' />
+                <div class="website-image">
+                    <img class="image-fade" src="../static/images/Bristol_Places.jpg" alt="Image of people in Bristol"  width="50%" height = "350px" th:src="@{images/Bristol_Places.jpg}"/>
+                </div>
+                <div class = "gallery-description">
+                    <p><b>Bristol Places</b><br>The Bristol Places gallery focuses on the physical and dynamic city – the ways that people have shaped and experienced it and continue to do so.</p>
+                </div>
+                <div class="text-on-image">Bristol Places </div>
+            </a>
+        </div>
+
+        <div class = "column">
+            <a href='https://www.bristolmuseums.org.uk/m-shed/whats-at/bristol-people/'>
+                <div class="website-image">
+                    <img  class="image-fade" src="../static/images/Bristol_People.jpg" alt="People in Bristol" width="50%" height = "350px" th:src="@{images/Bristol_People.jpg}"/>
+                </div>
+                <div class = "gallery-description">
+                    <p><b>Bristol People </b><br> The Bristol People gallery explores activities past and present that make Bristol what it is – creating, trading, challenging and celebrating. </p>
+                </div>
+                <div class="text-on-image">Bristol People </div>
+            </a>
+        </div>
+
+    </div>
 
 </div>
 
