@@ -156,7 +156,7 @@ img {vertical-align: middle;}
 
 
 .gallery-description p{
-    padding: 0 10px;
+    padding: 0 20px;
     font-size: 15px;
     text-align: left;
 }
@@ -345,33 +345,16 @@ img {
 
 .text-on-image1{
     position: absolute;
-    width: 30%;
-    bottom: 10px;
-    right: 10%;
+    width: 80%;
     background-color: black;
     color: white;
-    padding: 20px;
-    opacity: 0.7;
+    padding: 15px;
+    opacity: 0.6;
 
 }
+
 
 /*
-.gallery-description{
-    width: 50%;
-    background-color: #bbbbbb;
-    float: left;
-    height: 350px;
-    text-align: center;
-}
-
-
-.gallery-description p{
-    padding: 0 10px;
-    font-size: 15px;
-    text-align: left;
-}
-
-
 .center{
     display: block;
     margin-left: 25%;
