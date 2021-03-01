@@ -90,12 +90,16 @@
                         var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? "Additional information: " + makeClickable(obj.fields.link_to_additional_information) : "";
                         return `
                             <div class="object">
+                                <div class = "object-top">
+                                    <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
+                                    <h3 class="name-of-artist"> <strong>${obj.fields.artist}</strong></h3>
+                                    <h4 class="artist-birth-death"> <strong>${artistBirthDeath}</strong></h4>
+                                </div>
                                 <img class="object-image" alt = "${obj.fields.title_of_object}" src="/images/${obj.fields.image_of_object.id}.jpg"/>
-                                <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
-                                <h3 class="name-of-artist"> <strong>${obj.fields.artist}</strong></h3>
-                                <h4 class="artist-birth-death"> <strong>${artistBirthDeath}</strong></h4>
-                                <p> ${obj.fields.label}</p>
-                                <p> ${linkToAdditionalInformation}</p>
+                                <div class = "object-info">
+                                    <p> ${obj.fields.label}</p>
+                                    <p> ${linkToAdditionalInformation}</p>
+                                </div>
                             </div>
                         `
                     }
