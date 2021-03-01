@@ -48,7 +48,7 @@
 
     <script>
         function makeClickable(url) {
-            return String.prototype.link ? url.link(url) : '<a href="'+url+'">'+url+'</a>';
+            return String.prototype.link ? "Additional Information".link(url) : '<a href="'+url+'">'+url+'</a>';
         }
     </script>
 
@@ -86,7 +86,8 @@
                 .map((obj) => {
                     if (obj.fields.gallery == "Gallery 3 - European Old Masters" && obj.fields.image_of_object) {
                         var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
-                        var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? "Additional information: " + makeClickable(obj.fields.link_to_additional_information) : "";                        return `
+                        var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? makeClickable(obj.fields.link_to_additional_information) : "";
+                        return `
                             <div class="object">
                                 <div class = "object-top">
                                     <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
