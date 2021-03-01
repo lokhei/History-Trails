@@ -4,18 +4,25 @@ body {
     color: #333;
     margin: 0;
 }
+
 * {box-sizing: border-box;}
 img {
     max-width: 100%;
     height: auto;
 }
 
-
-.gallery3-title {
+.container {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1000px;
     text-align: center;
-    font-weight: normal;
-    font-size: 2.6rem;
 }
+#searchWrapper {
+    position: relative;
+}
+
+
+/*information boxes*/
 
 .object {
     max-width: 730px;
@@ -30,9 +37,7 @@ img {
     margin: 0 0 6px 0;
 }
 
-#searchWrapper {
-    position: relative;
-}
+
 
 .title-of-object {
     font-size: 2rem;
@@ -46,10 +51,14 @@ img {
     margin-right: 15px;
 }
 
-.container {
-    padding: 40px;
-    margin: 0 auto;
-    max-width: 1000px;
-    text-align: center;
+.object-info {
+    position: relative;
+
 }
+
+.object-info p{
+    font-size: 16px;
+    text-align: left;
+}
+
 
