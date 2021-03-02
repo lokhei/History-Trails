@@ -85,7 +85,7 @@
                 .map((obj) => {
                     if (obj.fields.gallery == "Gallery 2" && obj.fields.image_of_object) {
                         var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
-                        var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? (obj.fields.link_to_additional_information) : "";
+                        var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? makeClickable(obj.fields.link_to_additional_information) : "";
                         return `
                             <div class="object">
                                 <div class = "object-top">
