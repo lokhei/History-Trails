@@ -83,7 +83,13 @@
         const displayCharacters = (out) => {
             const htmlString = out
                 .map((obj) => {
-                    if (obj.fields.gallery == "Gallery 3 - European Old Masters" && obj.fields.image_of_object) {
+                    if (obj.fields.gallery == "Gallery 4") {
+                        var img;
+                        if(!obj.fields.image_of_object){
+                            img = obj.fields.no_of_object_in_order_anti_clockwise;
+                        } else{
+                            img = obj.fields.image_of_object.id;
+                        }
                         var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
                         var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? makeClickable(obj.fields.link_to_additional_information) : "";
                         return `
@@ -99,7 +105,8 @@
                                     <p> ${linkToAdditionalInformation}</p>
                                 </div>
                             </div>
-                        `                    }
+                        `                    
+                    }
                 })
                 .join('');
             charactersList.innerHTML = htmlString;
