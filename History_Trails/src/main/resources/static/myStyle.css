@@ -65,6 +65,7 @@ ul{
     text-align: left;
 }
 
+
 @media screen and (max-width: 600px) {
 
     .container{
@@ -119,4 +120,26 @@ ul{
     .object-info p{
         font-size: 10px;
     }
+}
+
+.container input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+.container button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: grey;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
 }
