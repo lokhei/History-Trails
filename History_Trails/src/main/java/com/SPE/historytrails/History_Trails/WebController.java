@@ -17,6 +17,8 @@ public class WebController {
     }
     @GetMapping(value = "/BristolArtGallery")
     public String BristolArtGallery(){ return "BristolArtGallery"; }
+    @GetMapping(value = "/popular")
+    public String popular() {return "popular";}
     @GetMapping(value = "/contact")
     public String contact(){ return "contact"; }
     @GetMapping(value = "/Gallery2")
