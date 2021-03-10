@@ -143,3 +143,29 @@ ul{
   border-left: none; /* Prevent double borders */
   cursor: pointer;
 }
+
+ @media screen and (max-width: 1100px) {
+
+.container input[type=text] {
+  padding: 5px;
+  font-size: 10px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+.container button {
+  float: left;
+  width: 20%;
+  padding: 5px;
+  background: grey;
+  color: white;
+  font-size: 10px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+ }
