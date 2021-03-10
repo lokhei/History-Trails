@@ -143,7 +143,7 @@ img {vertical-align: middle;}
     background-color: black;
     color: white;
     padding: 20px;
-    opacity: 0.7;
+    opacity: 0.5;
 
 }
 .gallery-description{
@@ -157,7 +157,7 @@ img {vertical-align: middle;}
 
 .gallery-description p{
     padding: 0 20px;
-    font-size: 15px;
+    font-size: 13px;
     text-align: left;
 }
 
@@ -175,7 +175,20 @@ img {vertical-align: middle;}
     text-align: center;
     font-size: 30px;
 }
+.gallery-description1{
+    width: 50%;
+    background-color: #bbbbbb;
+    float: left;
+    height: 350px;
+    text-align: center;
+}
 
+
+.gallery-description1 p{
+    padding: 0 20px;
+    font-size: 16px;
+    text-align: left;
+}
 
 /*-------------sidebar ------------------*/
 
@@ -368,4 +381,22 @@ img {
     text-align: center;
     font-size: 30px;
 }
+
+
+ /*-------------M SHED ------------------*/
+
+ @media screen and (max-width: 1100px) {
+
+
+     .gallery-description p{
+         padding: 0 20px;
+         font-size: 10px;
+         text-align: left;
+     }
+     .gallery-description1 p{
+         padding: 0 20px;
+         font-size: 12px;
+         text-align: left;
+     }
+ }
 
