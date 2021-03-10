@@ -4,6 +4,9 @@ body {
     background-attachment: fixed;
     margin: 0;
     font-family: Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 p {
@@ -366,23 +369,6 @@ img {
 
 }
 
-
-/*
-.center{
-    display: block;
-    margin-left: 25%;
-    width: 50%;
-}
-
-
-.white-text{
-    padding-bottom: 5%;
-    color: white;
-    text-align: center;
-    font-size: 30px;
-}
-
-*/
 
  @media screen and (max-width: 1100px) {
 
