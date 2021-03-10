@@ -401,5 +401,17 @@ img {
 
  }
 
+  @media screen and (max-width: 900px) {
+
+      .content p{
+          padding: 0 20px;
+          font-size: 10px;
+          text-align: left;
+      }
+
+
+  }
+
+
 
 
