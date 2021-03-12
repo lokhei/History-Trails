@@ -10,6 +10,8 @@
           <link th:href="@{/myStyle.css}" rel="stylesheet" />
           <link th:href="@{/navbar.css}" rel="stylesheet" />
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
 <body>
 
@@ -100,6 +102,7 @@
                         return `
                             <div class="object">
                                 <div class = "object-top">
+                                    <span id = ${obj.recordid} onclick="fav(this.id)"><i class="heart far fa-heart"></i> </span>
                                     <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
                                     <h3 class="name-of-artist"> <strong>${obj.fields.artist}</strong></h3>
                                     <h4 class="artist-birth-death"> <strong>${artistBirthDeath}</strong></h4>
@@ -109,6 +112,7 @@
                                     <p> ${obj.fields.label}</p>
 
                                     <p> ${linkToAdditionalInformation}</p>
+
                                 </div>
                             </div>
                         `
@@ -161,6 +165,7 @@
 
 
 <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}"></script>
+<script src="../static/favourites.js" th:src="@{/favourites.js}"></script>
 <script src="../static/top.js" th:src="@{/top.js}"></script>
 </body>
 </html>

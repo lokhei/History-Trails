@@ -68,6 +68,14 @@ ul{
     text-align: left;
 }
 
+.heart {
+    font-size: 25px;
+    color:red;
+    float: right;
+}
+
+
+
 
 @media screen and (max-width: 600px) {
 
