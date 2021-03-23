@@ -8,7 +8,7 @@ const navbar = document.getElementById("navbar");
 // Get the offset position of the navbar
 const sticky = navbar.offsetTop;
 mybutton = document.getElementById("myBtn");
-
+// const button_pos = navbar.offsetTop + 20;
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
@@ -22,7 +22,8 @@ function myFunction() {
 // When the user scrolls down 20px from the top of the document, show the button
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
+        mybutton.style.top = navbar.offsetHeight + 20 +"px";
+            mybutton.style.display = "block";
     } else {
         mybutton.style.display = "none";
     }
