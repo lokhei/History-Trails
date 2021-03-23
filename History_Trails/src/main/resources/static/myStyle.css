@@ -182,21 +182,24 @@ ul{
  }
 
 #myBtn {
-  display: none;
-  width: 8%;
-  position: fixed; /* Fixed/sticky position */
-  bottom: 5%; /* Place the button at the bottom of the page */
-  right: 15px;
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: black; /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 10px; /* Some padding */
-  border-radius: 45px; /* Rounded corners */
-  font-size: 12px; /* Increase font size */
-  opacity: 0.4;
+    display: block;
+    position: fixed; /* Fixed/sticky position */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: black; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 10px; /* Some padding */
+    font-size: 24px; /* Increase font size */
+    opacity: 0.6;
+
+    text-align: center;
+    left:48%;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    transition: all .5s ease
 }
 
 #myBtn:hover {
