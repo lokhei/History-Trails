@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History Trails</title>
+    <link th:href="@{/styles.css}" rel="stylesheet" />
     <link th:href="@{/myStyle.css}" rel="stylesheet" />
     <link th:href="@{/navbar.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
@@ -24,7 +25,15 @@
         <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
         <a href="BristolArtGallery"><i class = "fas fa-landmark"></i> Bristol Art Gallery</a>
         <a href="MShed"><i class = "fas fa-landmark"></i>  M Shed</a>
-        <a href=# ><i class = "fas fa-bookmark"></i> Favourites</a>
+        <div class="dropdown">
+            <button class="dropbtn"> <i class="fa fa-bookmark"></i> Favourites
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
         <a href="popular" class = "current_tab"><i class = "fas fa-star"></i> Popular</a>
     </div>
 
