@@ -75,7 +75,30 @@ ul{
 }
 
 
+#myBtn {
+    display: block;
+    position: fixed; /* Fixed/sticky position */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: black; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 10px; /* Some padding */
+    font-size: 24px; /* Increase font size */
+    opacity: 0.6;
 
+    text-align: center;
+    left:48%;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    transition: all .5s ease
+}
+
+#myBtn:hover {
+    background-color: grey;
+}
 
 @media screen and (max-width: 600px) {
 
@@ -107,6 +130,14 @@ ul{
     .object-image {
         width: 50%;
         margin-right: 10px;
+    }
+
+    #myBtn{
+        font-size: 16px;
+        height: 32px;
+        width: 32px;
+        padding: 0;
+
     }
 }
 
@@ -181,27 +212,4 @@ ul{
 
  }
 
-#myBtn {
-    display: block;
-    position: fixed; /* Fixed/sticky position */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: black; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 10px; /* Some padding */
-    font-size: 24px; /* Increase font size */
-    opacity: 0.6;
 
-    text-align: center;
-    left:48%;
-    border-radius: 50%;
-    height: 48px;
-    width: 48px;
-    transition: all .5s ease
-}
-
-#myBtn:hover {
-  background-color: grey;
-}
