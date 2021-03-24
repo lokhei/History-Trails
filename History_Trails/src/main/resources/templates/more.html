@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Trails</title>
+    <link th:href="@{/styles.css}" rel="stylesheet" />
+    <link th:href="@{/navbar.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <script src="cookies.js"></script>
+
+</head>
+
+<body>
+
+
+<div id="navbar">
+    <a class="title" href = "/"><h1>History Trails</h1></a>
+    <div class="logos">
+        <img src="../static/images/M_Shed_logo.jpg" alt = "MShed logo" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
+        <img src="../static/images/bristolMuseum_logo.png" alt = "Bristol Museums and Art Gallery logo" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
+    </div>
+
+    <div class = "topnav">
+        <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="BristolArtGallery"><i class = "fas fa-landmark"></i> Bristol Art Gallery</a>
+        <a href="MShed" ><i class = "fas fa-landmark"></i>  M Shed</a>
+        <div class="dropdown">
+            <button class="dropbtn"> <i class="fa fa-bookmark"></i> Favourites
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <a href="popular"><i class = "fas fa-star"></i> Popular</a>
+        <a href="more"class = "current_tab"><i class = "fas fa-plus"></i> More Info</a>
+    </div>
+
+</div>
+
+
+<div class="content">
+    <h1>  Cookies Policy </h1>
+    
+    <p>What are cookies and how do they work?
+        Cookies are small text files, which contain small amounts of information, that are placed on your device. Your internet browser sends these cookies back to the website every time you visit the site, so the website can recognise your device.
+
+        A cookie will not access any information other than the information you provide to us when you visit the website.
+
+        There are two main types of cookies:
+
+        First-party cookies – these are set by the website you are visiting;
+        Third-party cookies – these are set by other sites or applications.
+    </p>
+    <p>Why do we use cookies?
+        Cookies are required to provide some of the services and experiences on our website. They are widely used in order to make websites work, or work more efficiently, as well as to provide information to the owners of the site.
+
+        We use cookies to tailor what you see on the screen when you visit our website. We also use cookies with our marketing partners to provide you with tailored information and advertising about the Gallery as your browse other sites on the internet.
+
+        We also use cookies for web analytics purpose, both in-house and with analytics partners (for example Google Analytics), to give us an idea of how you use our website – which pages or functionality you use – so that we can continually improve our website and your user experience
+    </p>
+
+<div class="footer">
+    <h3>Connect with us</h3>
+
+    <div class="footer-row">
+        <div class = "footer-column">
+            <p>Bristol Museums<p>
+        </div>
+        <div class = "footer-column">
+            <p>MShed</p>
+        </div>
+        <div class = "footer-column">
+            <p>Bristol Museum & Art Gallery<p>
+
+        </div>
+    </div>
+
+    <div class="footer-row">
+
+        <div class = "footer-column">
+            <a href="https://www.instagram.com/bristolmuseums/?hl=en"target="_blank" rel="noopener noreferrer" class="fab fa-instagram"></a>
+            <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" target="_blank" rel="noopener noreferrer" class="fab fa-youtube"></a>
+        </div>
+        <div class = "footer-column">
+
+            <a href="https://www.facebook.com/mshedbristol/" target="_blank" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/mshedbristol" target="_blank" rel="noopener noreferrer" class="fab fa-twitter"></a>
+        </div>
+        <div class = "footer-column">
+            <a href="https://www.facebook.com/BristolMuseumandArtGallery/"target="_blank" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/bristolmuseum" target="_blank" rel="noopener noreferrer" class="fab fa-twitter "></a>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="../static/sticky-header.js" th:src="@{/sticky-header.js}"></script>
+<script>
+    window.onload = function() {
+        cookieConsent();
+    };
+</script>
+
+
+</body>
+</html>
