@@ -1,7 +1,7 @@
 // --- Config --- //
 var purecookieTitle = "Cookies"; // Title
 var purecookieDesc = "This website uses cookies to ensure you get the best experience on our website"; // Description
-var purecookieLink = '<a href="https://www.cssscript.com/privacy-policy/" target="_blank">More information</a>'; // Cookiepolicy link
+var purecookieLink = '<a href="https://www.cssscript.com/privacy-policy/" target="_blank">Learn More</a>'; // Cookiepolicy link
 var purecookieButton = "Accept"; // Button text
 // ---        --- //
 
@@ -59,7 +59,11 @@ function eraseCookie(name) {
 
 function cookieConsent() {
     if (!getCookie('purecookieDismiss')) {
-        document.body.innerHTML += '<div class="cookieConsentContainer" id="cookieConsentContainer"><div class="cookieTitle"><a>' + purecookieTitle + '</a></div><div class="cookieDesc"><p>' + purecookieDesc + ' ' + purecookieLink + '</p></div><div class="cookieButton"><a onClick="purecookieDismiss();">' + purecookieButton + '</a></div></div>';
+        document.body.innerHTML += '<div class="cookieConsentContainer" id="cookieConsentContainer">' +
+            '<div class="cookieTitle"><a>' + purecookieTitle + '</a></div>' +
+            '<div class="cookieDesc"><p>' + purecookieDesc + '</p></div>' +
+            '<div class="cookieButton"><a onClick="purecookieDismiss();">' + purecookieButton + '</a></div>'+
+            '<div class="cookieLink">' + purecookieLink + '</div></div>';
         pureFadeIn("cookieConsentContainer");
     }
 }
