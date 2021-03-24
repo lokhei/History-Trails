@@ -1,8 +1,8 @@
 // --- Config --- //
-var purecookieTitle = "Cookies."; // Title
-var purecookieDesc = "By using this website, you automatically accept that we use cookies."; // Description
-var purecookieLink = '<a href="https://www.cssscript.com/privacy-policy/" target="_blank">What for?</a>'; // Cookiepolicy link
-var purecookieButton = "Understood"; // Button text
+var purecookieTitle = "Cookies"; // Title
+var purecookieDesc = "This website uses cookies to ensure you get the best experience on our website"; // Description
+var purecookieLink = '<a href="https://www.cssscript.com/privacy-policy/" target="_blank">More information</a>'; // Cookiepolicy link
+var purecookieButton = "Accept"; // Button text
 // ---        --- //
 
 
@@ -18,7 +18,8 @@ function pureFadeIn(elem, display){
             requestAnimationFrame(fade);
         }
     })();
-};
+}
+
 function pureFadeOut(elem){
     var el = document.getElementById(elem);
     el.style.opacity = 1;
@@ -30,7 +31,7 @@ function pureFadeOut(elem){
             requestAnimationFrame(fade);
         }
     })();
-};
+}
 
 function setCookie(name,value,days) {
     var expires = "";
@@ -41,13 +42,14 @@ function setCookie(name,value,days) {
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
+
 function getCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
     for(var i=0;i < ca.length;i++) {
         var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        while (c.charAt(0)===' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
     }
     return null;
 }
