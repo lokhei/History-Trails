@@ -127,7 +127,9 @@
             charactersList.innerHTML = htmlString;
         };
 
-        loadCharacters();
+        window.onload = function() {
+            loadCharacters().then(r => cookieConsent());
+        }
 
     </script>
 </div>
