@@ -1,7 +1,7 @@
 // --- Config --- //
 var purecookieTitle = "Cookies"; // Title
 var purecookieDesc = "This website uses cookies to ensure you get the best experience on our website"; // Description
-var purecookieLink = '<a href="https://www.cssscript.com/privacy-policy/" target="_blank">Learn More</a>'; // Cookiepolicy link
+var purecookieLink = '<a href="more" target="_blank">Learn More</a>'; // Cookiepolicy link
 var purecookieButton = "Accept"; // Button text
 // ---        --- //
 

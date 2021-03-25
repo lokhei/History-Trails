@@ -45,20 +45,28 @@
 
 
 <div class="content">
+    <div class="arow">
+        <div class="acolumn">
+            <img src="./static/images/art1.png" alt="Collage from Bristol Museum and Art Gallery website" style="width:100%" th:src="@{/images/art1.png}">
+        </div>
+        <div class="acolumn">
+            <img src="../static/images/art2.png" alt="Collage from Bristol Museum and Art Gallery website" style="width:100%" th:src="@{/images/art2.png}">
+        </div>
+    </div>
     <h1>  Cookies Policy </h1>
     <button type="button" class="collapsible">What are cookies and how do they work?</button>
     <div class="contentc">
-        <p>Cookies are small text files, which contain small amounts of information, that are placed on your device. Your internet browser sends these cookies back to the website every time you visit the site, so the website can recognise your device. A cookie will not access any information other than the information you provide to us when you visit the website.</p>
+        <br>Cookies are small files containing tiny amounts of information, that are placed on your device. Your internet browser sends these cookies back to the website every time you visit the site, so the website can recognise your device. A first-party cookie is created and stored by the website you are visiting directly.<br>
     </div>
     <button type="button" class="collapsible">Why do we use cookies?</button>
     <div class="contentc">
-        <p>Cookies are required to provide some of the services and experiences on our website. They are widely used in order to make websites work, or work more efficiently, as well as to provide information to the owners of the site.</p>
+        <br>Cookies are required to enable the 'favourites' and 'most popular' features on our website to work effectively and efficiently. <br><br>
     </div>
-    <button type="button" class="collapsible">ow to control and delete cookies</button>
+    <button type="button" class="collapsible">How to control and delete cookies?</button>
     <div class="contentc">
-        <p> If you wish to restrict or block the cookies which are set by our website, or indeed any other website, you can do this through your browser settings. The help function within your browser should tell you how.
+        <br> If you wish to restrict or block the cookies which are set by our website, or indeed any other website, you can do this through your browser settings. The help function within your browser should tell you how.
 
-            For information on how to block or delete cookies on the browser of your mobile phone you may need to refer to your handset manual.</p>
+            For information on how to block or delete cookies on the browser of your mobile phone you may need to refer to your handset manual.<br><br>
     </div>
 
 <div class="footer">
@@ -99,12 +107,6 @@
 
 <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}"></script>
     <script src="../static/collapse.js" th:src="@{/collapse.js}"></script>
-<script>
-    window.onload = function() {
-        cookieConsent();
-    };
-</script>
-
 
 </body>
 </html>
