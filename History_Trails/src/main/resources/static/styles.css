@@ -126,7 +126,7 @@ img {vertical-align: middle;}
     opacity: 1;
     display: block;
     float:left;
-    /*transition: .5s ease;*/
+    transition: .5s ease;
 
 }
 .column a:hover .image-fade{
@@ -149,6 +149,7 @@ img {vertical-align: middle;}
     opacity: 0.5;
 
 }
+
 .gallery-description{
     width: 50%;
     background-color: #bbbbbb;
@@ -275,7 +276,6 @@ img {vertical-align: middle;}
     cursor: pointer;
     padding: 18px;
     width: 100%;
-    border: 3%;
     text-align: left;
     outline: none;
     font-size: 18px;
@@ -500,7 +500,6 @@ img {vertical-align: middle;}
         position: relative;
         display: block;
     }
-
 
 }
 
