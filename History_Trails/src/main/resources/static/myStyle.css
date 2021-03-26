@@ -61,13 +61,11 @@ ul{
 
 .object-info {
     position: relative;
-
-}
-
-.object-info p{
     font-size: 20px;
     text-align: left;
+
 }
+
 
 .heart {
     font-size: 25px;
@@ -100,6 +98,30 @@ ul{
     background-color: grey;
 }
 
+
+.container input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+/* Style the submit button */
+.container button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: grey;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+}
+
+
 @media screen and (max-width: 600px) {
 
     .container{
@@ -123,13 +145,18 @@ ul{
         font-size: 12px;
     }
 
-    .object-info p{
-        font-size: 12px;
+    .object-image {
+        width: 60%;
+        vertical-align: middle;
+        float: none;
+        margin-right: 10px;
+        max-height: 200px;
     }
 
-    .object-image {
-        width: 50%;
-        margin-right: 10px;
+    .object-info {
+        padding: 5px 2%;
+        font-size: 12px;
+        text-align: left;
     }
 
     #myBtn{
@@ -139,7 +166,32 @@ ul{
         padding: 0;
 
     }
+
+    .container input[type=text] {
+        padding: 5px;
+        font-size: 10px;
+        border: 1px solid grey;
+        float: left;
+        width: 80%;
+        background: #f1f1f1;
+    }
+
+    /* Style the submit button */
+    .container button {
+        float: left;
+        width: 20%;
+        padding: 5px;
+        background: grey;
+        color: white;
+        font-size: 10px;
+        border: 1px solid grey;
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+    }
+
 }
+
+
 
 
 @media screen and (max-width: 300px) {
@@ -164,52 +216,5 @@ ul{
     }
 }
 
-.container input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: #f1f1f1;
-}
-
-/* Style the submit button */
-.container button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: grey;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none; /* Prevent double borders */
-  cursor: pointer;
-}
-
- @media screen and (max-width: 600px) {
-
-    .container input[type=text] {
-        padding: 5px;
-        font-size: 10px;
-        border: 1px solid grey;
-        float: left;
-        width: 80%;
-        background: #f1f1f1;
-        }
-
-        /* Style the submit button */
-        .container button {
-        float: left;
-        width: 20%;
-        padding: 5px;
-        background: grey;
-        color: white;
-        font-size: 10px;
-        border: 1px solid grey;
-        border-left: none; /* Prevent double borders */
-        cursor: pointer;
-        }
-
-}
 
 
