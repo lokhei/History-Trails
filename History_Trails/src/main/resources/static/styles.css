@@ -175,8 +175,8 @@ img {vertical-align: middle;}
 
 
 .gallery-description p{
-    padding: 0 20px;
-    font-size: 15px;
+    padding: 0 15px;
+    font-size: 17px;
     text-align: left;
 }
 
@@ -211,6 +211,25 @@ img {vertical-align: middle;}
         padding: 13px 5px;
     }
 
+}
+
+@media screen and (max-width: 1000px) {
+    .gallery-description p{
+        font-size: 11px;
+    }
+    .image-fade{
+        height: 250px;
+    }
+    .gallery-description{
+        height: 250px;
+    }
+
+    .gallery-label{
+        padding: 10px 5px;
+    }
+    .gallery-label p{
+        font-size: 13px;
+    }
 }
 
 /*Cookie Consent Begin*/
