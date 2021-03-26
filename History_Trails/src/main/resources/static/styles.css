@@ -166,6 +166,9 @@ img {vertical-align: middle;}
 
 }
 
+.gallery-label p{
+    font-family: "Georgia", "Times New Roman", serif;
+}
 .gallery-description{
     width: 50%;
     background-color: #bbbbbb;
@@ -197,54 +200,6 @@ img {vertical-align: middle;}
 }
 
 
-@media screen and (max-width: 1200px) {
-    .gallery-description p{
-        font-size: 14px;
-    }
-    .image-fade{
-        height: 300px;
-    }
-    .gallery-description{
-        height: 300px;
-    }
-    .gallery-label{
-        padding: 13px 5px;
-    }
-
-}
-
-@media screen and (max-width: 1050px) {
-    .gallery-description p{
-        font-size: 13px;
-    }
-    .image-fade{
-        height: 250px;
-    }
-    .gallery-description{
-        height: 250px;
-    }
-    .gallery-label p{
-        font-size: 13px;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .gallery-description p{
-        font-size: 12px;
-    }
-    .image-fade{
-        height: 230px;
-    }
-    .gallery-description{
-        height: 230px;
-    }
-    .gallery-label p{
-        font-size: 12px;
-    }
-    .gallery-label{
-        padding: 10px 5px;
-    }
-}
 
 /*Cookie Consent Begin*/
 .cookieConsentContainer {
@@ -384,12 +339,63 @@ img {vertical-align: middle;}
 
 
 /*------Responsiveness-------------------*/
+
+@media screen and (max-width: 1200px) {
+    .gallery-description p{
+        font-size: 14px;
+    }
+    .image-fade{
+        height: 300px;
+    }
+    .gallery-description{
+        height: 300px;
+    }
+    .gallery-label{
+        padding: 13px 5px;
+    }
+
+}
+
+
 @media screen and (max-width: 1100px) {
+    .content p{
+        font-size: 16px;
+    }
     .text-on-image{
         width: 30%;
 
     }
 }
+@media screen and (max-width: 1050px) {
+    .gallery-description p {
+        font-size: 13px;
+    }
+
+    .image-fade {
+        height: 250px;
+    }
+
+    .gallery-description {
+        height: 250px;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .gallery-description p{
+        font-size: 12px;
+    }
+    .image-fade{
+        height: 230px;
+    }
+    .gallery-description{
+        height: 230px;
+    }
+    .gallery-label{
+        padding: 10px 5px;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .column{
         padding: 10px 5%;
@@ -401,14 +407,16 @@ img {vertical-align: middle;}
     .gallery-label{
         right: 10%;
         width: 40%;
+        padding: 10px;
+
     }
 
 }
 
 @media screen and (max-width: 600px) {
     /*header*/
-    p{
-        font-size: 16px;
+    .content p{
+        font-size: 18px;
     }
     h1{
         font-size: 20px;
@@ -425,12 +433,21 @@ img {vertical-align: middle;}
     }
     .column {
         width: 100%;
-        padding: 10px 5%;
+        padding: 10px 10%;
 
     }
-    .text-on-image, .gallery-label{
-        right: 5%;
-        font-size: 12px;
+
+    .text-on-image{
+        right: 10%;
+    }
+    .gallery-label{
+        right: 10%;
+        font-size: 16px;
+        padding: 15px;
+    }
+    .gallery-description p{
+        font-size: 16px;
+
     }
     .center{
         width:90%;
@@ -438,6 +455,34 @@ img {vertical-align: middle;}
     }
     .white-text{
         font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .gallery-description p{
+        font-size: 14px;
+
+    }
+    .gallery-label{
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .image-fade{
+        height: 200px;
+    }
+    .gallery-description{
+        height: 200px;
+    }
+    .gallery-description p{
+        font-size: 12px;
+
+    }
+    .gallery-label{
+        font-size: 12px;
+        padding: 10px;
     }
 }
 
