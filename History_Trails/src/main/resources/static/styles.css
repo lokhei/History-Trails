@@ -1,12 +1,17 @@
 body {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    font-family: sans-serif;
+    background-color: #dedede;
+    color: #333;
     margin: 0;
-    font-family: Verdana, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+* {box-sizing: border-box;}
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 p {
@@ -34,7 +39,12 @@ h2{
 
 * {box-sizing: border-box;}
 .mySlides {display: none;}
-img {vertical-align: middle;}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    height: auto;
+}
 
 /* Slideshow container */
 .slideshow-container {
