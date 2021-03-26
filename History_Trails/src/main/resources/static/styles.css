@@ -264,6 +264,60 @@ img {vertical-align: middle;}
 
 }
 
+
+.more-padding{
+    padding: 0 5%;
+}
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color:white;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 3%;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: #ccc;
+}
+
+.contentc{
+    padding: 20px 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    font-size: 18px;
+    transition: max-height 0.2s ease-out;
+}
+
+
+.collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 8px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.acolumn {
+    float: left;
+    width:50%;
+    padding: 5px;
+}
+
+
+
+
 /*------Responsiveness-------------------*/
 @media screen and (max-width: 1100px) {
     .text-on-image{
@@ -412,7 +466,9 @@ img {vertical-align: middle;}
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
     }
-
+    .contentc, .collapsible{
+        font-size: 15px;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -447,55 +503,4 @@ img {vertical-align: middle;}
 
 
 }
-
-.more-padding{
-    padding: 0 5%;
-}
-/* Style the button that is used to open and close the collapsible content */
-.collapsible {
-    background-color:white;
-    color: black;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: 3%;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .collapsible:hover {
-    background-color: #ccc;
-}
-
-.contentc{
-    padding: 20px 18px;
-    background-color: white;
-    display: none;
-    overflow: hidden;
-    font-size: 15px;
-    transition: max-height 0.2s ease-out;
-}
-
-
-.collapsible:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 8px;
-    color: white;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-}
-
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.acolumn {
-    float: left;
-    width:50%;
-    padding: 5px;
-}
-
 
