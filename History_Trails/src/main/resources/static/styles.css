@@ -470,13 +470,13 @@ img {vertical-align: middle;}
 }
 
 .contentc{
-    padding: 0 18px;
+    padding: 20px 18px;
     background-color: white;
-    max-height: 0;
+    display: none;
     overflow: hidden;
     font-size: 15px;
     transition: max-height 0.2s ease-out;
-    }
+}
 
 
 .collapsible:after {
