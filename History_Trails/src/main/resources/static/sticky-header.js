@@ -33,35 +33,3 @@ function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-
-
-$(document).on('ready', function() {
-    if (document.cookie.indexOf("accepted_cookies=") < 0) {
-        $('.cookie-overlay').removeClass('d-none').addClass('d-block');
-    }
-
-    $('.accept-cookies').on('click', function() {
-        document.cookie = "accepted_cookies=yes;"
-        $('.cookie-overlay').removeClass('d-block').addClass('d-none');
-    })
-
-    // expand depending on your needs
-    $('.close-cookies').on('click', function() {
-        $('.cookie-overlay').removeClass('d-block').addClass('d-none');
-    })
-})
-
-function GetCookie(name) {
-    var arg=name+"=";
-    var alen=arg.length;
-    var clen=document.cookie.length;
-    var i=0;
-    while (i<clen) {
-        var j=i+alen;
-        if (document.cookie.substring(i,j)==arg)
-            return "here";
-        i=document.cookie.indexOf(" ",i)+1;
-        if (i==0) break;
-    }
-    return null;
-}
