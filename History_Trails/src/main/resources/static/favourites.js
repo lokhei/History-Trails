@@ -9,5 +9,11 @@ function fav(id){
             $(y).html('<i class="heart fas fa-heart"></i>');
             $(y).addClass("liked");
         }
+    }else{
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+        setTimeout(function(){
+            $(modal).hide();
+        }, 5000);
     }
 }
