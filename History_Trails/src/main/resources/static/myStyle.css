@@ -126,20 +126,20 @@ ul{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 99; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
+    margin-top: 100px;
+    text-align: center;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
 }
 
 /* Modal Content */
 .modal-content {
-    background-color: #888888;
+    background-color: darkgrey;
     margin: auto;
-    padding: 10px;
-    width: 50%;
+    padding: 5px;
+    width: 80%;
 }
 
 
@@ -209,6 +209,10 @@ ul{
         border: 1px solid grey;
         border-left: none; /* Prevent double borders */
         cursor: pointer;
+    }
+    .modal-content p{
+        margin: 10px 0;
+        font-size: 12px;
     }
 
 }
