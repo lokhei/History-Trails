@@ -1,18 +1,18 @@
 // --- Config --- //
-var purecookieTitle = "Cookies"; // Title
-var purecookieDesc = "This website uses cookies to ensure you get the best experience on our website"; // Description
-var purecookieLink = '<a href="more" target="_blank">Learn More</a>'; // Cookiepolicy link
-var purecookieButton = "Accept"; // Button text
+const purecookieTitle = "Cookies"; // Title
+const purecookieDesc = "This website uses cookies to ensure you get the best experience on our website"; // Description
+const purecookieLink = '<a href="more" target="_blank">Learn More</a>'; // Cookiepolicy link
+const purecookieButton = "Accept"; // Button text
 // ---        --- //
 
 
 function pureFadeIn(elem, display){
-    var el = document.getElementById(elem);
+    const el = document.getElementById(elem);
     el.style.opacity = 0;
     el.style.display = display || "block";
 
     (function fade() {
-        var val = parseFloat(el.style.opacity);
+        let val = parseFloat(el.style.opacity);
         if (!((val += .02) > 1)) {
             el.style.opacity = val;
             requestAnimationFrame(fade);
@@ -21,11 +21,11 @@ function pureFadeIn(elem, display){
 }
 
 function pureFadeOut(elem){
-    var el = document.getElementById(elem);
+    const el = document.getElementById(elem);
     el.style.opacity = 1;
 
     (function fade() {
-        if ((el.style.opacity -= .02) < 0) {
+        if ((el.style.opacity -= 0.02) < 0) {
             el.style.display = "none";
         } else {
             requestAnimationFrame(fade);
@@ -34,9 +34,9 @@ function pureFadeOut(elem){
 }
 
 function setCookie(name,value,days) {
-    var expires = "";
+    let expires = "";
     if (days) {
-        var date = new Date();
+        const date = new Date();
         date.setTime(date.getTime() + (days*24*60*60*1000));
         expires = "; expires=" + date.toUTCString();
     }
@@ -44,10 +44,10 @@ function setCookie(name,value,days) {
 }
 
 function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for(let i=0; i < ca.length; i++) {
+        let c = ca[i];
         while (c.charAt(0)===' ') c = c.substring(1,c.length);
         if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
     }
