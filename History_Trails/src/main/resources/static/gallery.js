@@ -39,10 +39,16 @@ const displayCharacters = (out) => {
         .map((obj) => {
             if (obj.fields.gallery === gallery) {
                 var img;
+                var favClass;
                 if (!obj.fields.image_of_object) {
                     img = obj.recordid;
                 } else {
                     img = obj.fields.image_of_object.id;
+                }
+                favClass = '<i class="heart far fa-heart"></i>';
+                if (getCookie(obj.recordid)){
+                    favClass = '<i class="heart fas fa-heart"></i>';
+
                 }
 
                 var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
@@ -50,7 +56,7 @@ const displayCharacters = (out) => {
                 return `
                         <div class="object">
                             <div class = "object-top">
-                                <span id = ${obj.recordid} onclick="fav(this.id)"><i class="heart far fa-heart"></i> </span>
+                                <span id = ${obj.recordid} onclick="fav(this.id)">${favClass} </span>
                                 <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
                                 <h3 class="name-of-artist"> <strong>${obj.fields.artist}</strong></h3>
                                 <h4 class="artist-birth-death"> <strong>${artistBirthDeath}</strong></h4>
@@ -67,6 +73,7 @@ const displayCharacters = (out) => {
         .join('');
     charactersList.innerHTML = htmlString;
 };
+
 
 window.onload = function() {
     loadCharacters().then(r => cookieConsent());
