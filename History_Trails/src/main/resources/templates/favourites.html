@@ -110,7 +110,11 @@
                         var img;
                         var favClass;
                         if (!obj.fields.image_of_object) {
-                            img = obj.recordid;
+                            if (obj.fields.gallery == "Gallery 5 - Modern Art") {
+                                img = "gallery5/" + obj.fields.no_of_object_in_order_anti_clockwise;
+                            }else{
+                                img = obj.recordid;
+                            }
                         } else {
                             img = obj.fields.image_of_object.id;
                         }
