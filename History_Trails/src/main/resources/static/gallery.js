@@ -22,10 +22,20 @@ searchBar.addEventListener('keyup', (e) => {
     displayCharacters(filteredCharacters);
 });
 
+async function fetchObjects() {
+    let url = 'https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type';
+    try {
+        let res = await fetch(url);
+        return (await res.json()).records;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
 const loadCharacters = async () => {
     try {
-        const res = await fetch('https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type');
-        hpCharacters = (await res.json()).records;
+        hpCharacters = (await fetchObjects());
         displayCharacters(hpCharacters);
     } catch (err) {
         console.error(err);
@@ -78,3 +88,5 @@ const displayCharacters = (out) => {
 window.onload = function() {
     loadCharacters().then(r => cookieConsent());
 }
+
+module.exports = fetchObjects()
