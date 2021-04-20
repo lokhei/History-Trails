@@ -1,7 +1,4 @@
-
-
-\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Client\
+Client\
 Our client for this project is the Bristol Museum and Art Gallery and M Shed. Both museums are part of Bristol Culture, and aim to showcase different pieces of artwork from all periods of time by many internationally famous artists, as well as the history of Bristol. Our main source of contact is Mark Pajak, head of Digital Development at Bristol Culture. As the strategic lead on digital and user experience, he has a particular interest in meeting user needs and providing the best user experience. \
 \
 The Domain\
