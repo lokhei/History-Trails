@@ -1,10 +1,4 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2513
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww27920\viewh17040\viewkind0
-\deftab720
-\pard\pardeftab720\sl400\partightenfactor0
+
 
 \f0\fs24 \cf2 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \strokec2 Client\
@@ -19,4 +13,3 @@ Due to Covid-19, both the Bristol Museum and Art Gallery and M Shed have had to 
 Our Vision\
 First and foremost, our web app must meet our client\'92s needs and show the basic information about the object of interest, including the name of the object, who created it, when it was created and a general description, along with an image of the object. The web app should be easy to navigate, providing a pleasant user experience. \
 In order to present this information in a useful format, we plan to have a QR code for each gallery so that visitors can scan the code and be brought to a page with all the objects in that gallery. In the case that the visitors are unable to scan the QR codes (perhaps because of their phone\'92s functionality), they would also be able to navigate to the galleries manually. Each  gallery would then be sorted by the type of object( i.e. sculpture, painting etc. ) or perhaps in the order the visitor would see when exploring the room in a circular order. We will also implement a favourites\'92 functionality so that the visitors can revisit their favourite objects. \
-}
