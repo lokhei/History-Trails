@@ -42,12 +42,8 @@
 <div class="content">
     <button onclick="topFunction()" id="myBtn" title="Go to top">▲</button>
     <div class="container">
-        <h1>Favourites</h1>
-        <div id="searchWrapper">
-            <label for="searchBar"></label>
-            <input  type="text" name="searchBar" id="searchBar" placeholder="Search for an object">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </div>
+        <h1>Popular</h1>
+
         <ul id="charactersList"></ul>
     </div>
 
@@ -100,22 +96,8 @@
 
 
         const charactersList = document.getElementById('charactersList');
-        const searchBar = document.getElementById('searchBar');
         let hpCharacters = [];
 
-        searchBar.addEventListener('keyup', (e) => {
-            const searchString = e.target.value.toLowerCase();
-
-            const filteredCharacters = hpCharacters.filter((obj) => {
-                var artistName = (obj.fields.artist) ? obj.fields.artist : "";
-
-                return (
-                    obj.fields.title_of_object.toLowerCase().includes(searchString) ||
-                    artistName.toLowerCase().includes(searchString)
-                );
-            });
-            displayCharacters(filteredCharacters);
-        });
 
         async function fetchObjects() {
             let url = 'https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type';
