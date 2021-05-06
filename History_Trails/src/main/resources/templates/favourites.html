@@ -20,7 +20,6 @@
 </head>
 <body>
 
-
 <div id="navbar">
     <a class="title" href = "/"><h1>History Trails</h1></a>
     <div class="logos">
@@ -32,17 +31,19 @@
         <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
         <a href="BristolArtGallery"><i class = "fas fa-landmark"></i> Bristol Art Gallery</a>
         <a href="MShed"><i class = "fas fa-landmark"></i>  M Shed</a>
-        <a href="favourites"><i class = "fas fa-heart"></i> Favourites</a>
-        <a href="popular" class = "current_tab"><i class = "fas fa-star"></i> Popular</a>
+        <a href="favourites" class = "current_tab"><i class = "fas fa-heart"></i> Favourites</a>
+        <a href="popular"><i class = "fas fa-star"></i> Popular</a>
     </div>
 
 </div>
 
 
 <div class="content">
+
+
     <button onclick="topFunction()" id="myBtn" title="Go to top">▲</button>
     <div class="container">
-        <h1>European Old Masters</h1>
+        <h1>Favourites</h1>
         <div id="searchWrapper">
             <label for="searchBar"></label>
             <input  type="text" name="searchBar" id="searchBar" placeholder="Search for an object">
@@ -51,46 +52,18 @@
         <ul id="charactersList"></ul>
     </div>
 
+
+
+
     <script>
 
-
-
-        let requestURL = "/objects/list";
-
-        //create new request object
-        let request = new XMLHttpRequest();
-
-        //open request
-        request.open('GET', requestURL);
-
-
-        //set response type to json
-        request.responseType = 'json';
-        //send request
-        request.send();
-
-        let topten = []
-
-        //dealing with response
-        request.onload = function() {
-
-            let like = request.response;
-
-
-            //sort by number of likes
-            like.sort((a, b) => {
-                return (b.likes - a.likes);
-            });
-
-            //get top ten
-            for (let i = 0; i < 10; i++) {
-                topten.push(like[i]['recordid'])
+        favourites = []
+        $.each(document.cookie.split(/; */), function()  {
+            let splitCookie = this.split('=');
+            if (splitCookie[0] !== "purecookieDismiss") {
+                favourites.push(splitCookie[0]);
             }
-
-        }
-
-
-
+        });
 
 
 
@@ -117,21 +90,10 @@
             displayCharacters(filteredCharacters);
         });
 
-        async function fetchObjects() {
-            let url = 'https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type';
-            try {
-                let res = await fetch(url);
-                return (await res.json()).records;
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-
-
         const loadCharacters = async () => {
             try {
-                hpCharacters = (await fetchObjects());
+                const res = await fetch('https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type');
+                hpCharacters = (await res.json()).records;
                 displayCharacters(hpCharacters);
             } catch (err) {
                 console.error(err);
@@ -139,11 +101,12 @@
         };
 
 
+
         const displayCharacters = (out) => {
             const htmlString = out
                 .map((obj) => {
-
-                    if (topten.includes(obj.recordid)){
+                    // if (obj.fields.gallery === "Gallery 3 - European Old Masters") {
+                    if (favourites.includes(obj.recordid)){
                         var img;
                         var favClass;
                         if (!obj.fields.image_of_object) {
@@ -190,9 +153,7 @@
         }
 
 
-
     </script>
-
 
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -201,7 +162,6 @@
 
     </div>
 </div>
-
 
 <div class="footer">
     <h3>Connect with us</h3>
@@ -236,7 +196,6 @@
         </div>
     </div>
 </div>
-
 
 
 <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}"></script>
