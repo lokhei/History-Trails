@@ -12,8 +12,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -33,7 +31,7 @@ public class HistoryTrailsApplication {
 	}
 
 
-	public JSONArray initialiseLikes() throws IOException {
+	public void initialiseLikes() throws IOException {
 
 		JSONArray likesList = new JSONArray();
 
@@ -63,7 +61,6 @@ public class HistoryTrailsApplication {
 			e.printStackTrace();
 		}
 
-		return likesList;
 
 	}
 
@@ -77,51 +74,21 @@ public class HistoryTrailsApplication {
 			connection.setRequestMethod("GET");
 			connection.setDoOutput(true);
 			connection.setRequestProperty ("Authorization", "Basic " + encodedKey);
-			InputStream stream = (InputStream) connection.getInputStream();
+			InputStream stream = connection.getInputStream();
 			JSONParser parser = new JSONParser();
 			return (JSONObject)parser.parse(new InputStreamReader(stream, StandardCharsets.UTF_8));
 		} catch(IOException | ParseException uee) { return null; }
 	}
 
-//	@GetMapping(value = "/updateLikes")
-//	public void updateLikes(Iterable<JSONObject> likesList, String recordUpdate, int sign) throws IOException {
-//
-//
-//		JSONArray updatedlikesList = new JSONArray();
-//
-//		likesList.forEach(object -> {
-//			Object recordid = object.get("recordid");
-//			int numLikes = (recordid.equals(recordUpdate))  ?  (int) object.get("likes") + sign : 0;
-//			JSONObject objectLikes = new JSONObject();
-//			objectLikes.put("recordid", recordid);
-//			objectLikes.put("likes", numLikes);
-//			updatedlikesList.add(objectLikes);
-//
-//		});
-//
-//		try (FileWriter file = new FileWriter("src/main/resources/json/likes.json")) {
-//			//We can write any JSONArray or JSONObject instance to the file
-//			file.write(updatedlikesList.toString());
-//			file.flush();
-//
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//
-////		return updatedlikesList;
-//
-//	}
-
-
 	@Bean
 	CommandLineRunner runner(ObjectService objectService){
 		return args -> {
 
-			JSONArray likesList = initialiseLikes();
+			initialiseLikes();
 
 
 			ObjectMapper mapper = new ObjectMapper();
-			TypeReference<List<Objects>> typeReference = new TypeReference<List<Objects>>(){};
+			TypeReference<List<Objects>> typeReference = new TypeReference<>() {};
 			InputStream targetStream = TypeReference.class.getResourceAsStream("/json/likes.json");
 
 			try {
