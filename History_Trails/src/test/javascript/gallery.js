@@ -33,7 +33,6 @@ async function fetchObjects() {
 }
 
 
-
 const loadCharacters = async () => {
     try {
         hpCharacters = (await fetchObjects());
@@ -42,6 +41,7 @@ const loadCharacters = async () => {
         console.error(err);
     }
 };
+
 
 
 const displayCharacters = (out) => {
@@ -89,3 +89,4 @@ window.onload = function() {
     loadCharacters().then(r => cookieConsent());
 }
 
+module.exports = fetchObjects()

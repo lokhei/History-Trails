@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History Trails</title>
-    <link th:href="@{/styles.css}" rel="stylesheet" />
     <link th:href="@{/myStyle.css}" rel="stylesheet" />
     <link th:href="@{/navbar.css}" rel="stylesheet" />
+    <link th:href="@{/styles.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
-    <script src="cookies.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/favourites.js" th:src="@{/favourites.js}"></script>
+    <script src="../static/cookies.js" th:src="@{/cookies.js}"></script>
+
+
 </head>
 <body>
+
 
 <div id="navbar">
     <a class="title" href = "/"><h1>History Trails</h1></a>
@@ -28,7 +34,6 @@
         <a href="MShed"><i class = "fas fa-landmark"></i>  M Shed</a>
         <a href="favourites"><i class = "fas fa-heart"></i> Favourites</a>
         <a href="popular" class = "current_tab"><i class = "fas fa-star"></i> Popular</a>
-       
     </div>
 
 </div>
@@ -36,9 +41,10 @@
 
 <div class="content">
 
-<!--//////////////-->
+
 
 </div>
+
 
 <div class="footer">
     <h3>Connect with us</h3>
@@ -75,12 +81,6 @@
 </div>
 
 
-
-<script>
-    window.onload = function() {
-        cookieConsent();
-    };
-</script>
 
 <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}"></script>
 

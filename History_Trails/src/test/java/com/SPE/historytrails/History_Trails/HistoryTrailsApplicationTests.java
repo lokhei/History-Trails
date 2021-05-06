@@ -3,17 +3,18 @@ package com.SPE.historytrails.History_Trails;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @SpringBootTest
-class HistoryTrailsApplicationTests {
-
-	@Autowired
-	WebController webcontroller;
+public class HistoryTrailsApplicationTests {
 
 	@Test
 	void contextLoads() {
 	}
+
+
+	@Autowired
+	WebController webcontroller;
+
 
 	@Test
 	void htmlRendering(){
@@ -29,5 +30,4 @@ class HistoryTrailsApplicationTests {
 		assert(webcontroller.more().equals("more"));
 
 	}
-
 }
