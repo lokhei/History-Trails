@@ -1,6 +1,6 @@
 
 function makeClickable(url) {
-    return String.prototype.link ? "Additional Information".link(url) : '<a href="'+url+'">'+url+'</a>';
+    return '<a href="'+url+'" target="_blank">Additional Info</a>';
 }
 
 
