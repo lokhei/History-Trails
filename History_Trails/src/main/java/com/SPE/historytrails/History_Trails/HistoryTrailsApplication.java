@@ -31,7 +31,7 @@ public class HistoryTrailsApplication {
 	}
 
 
-	public void initialiseLikes() throws IOException {
+	public static JSONArray initialiseLikes() {
 
 		JSONArray likesList = new JSONArray();
 
@@ -50,8 +50,14 @@ public class HistoryTrailsApplication {
 
 		});
 
+		return likesList;
 
-//		write to file
+	}
+
+
+	public void createLikesfile(){
+
+		JSONArray likesList = initialiseLikes();
 		try (FileWriter file = new FileWriter("src/main/resources/json/likes.json")) {
 			//We can write any JSONArray or JSONObject instance to the file
 			file.write(likesList.toString());
@@ -60,9 +66,8 @@ public class HistoryTrailsApplication {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-
 	}
+
 
 	private static JSONObject requestJSON(String urlString, String username, String key)
 	{
@@ -84,7 +89,7 @@ public class HistoryTrailsApplication {
 	CommandLineRunner runner(ObjectService objectService){
 		return args -> {
 
-			initialiseLikes();
+			createLikesfile();
 
 
 			ObjectMapper mapper = new ObjectMapper();
