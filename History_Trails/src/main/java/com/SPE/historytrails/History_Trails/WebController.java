@@ -34,8 +34,6 @@ public class WebController {
     public String gallery5(){
         return "Gallery5";
     }
-    @GetMapping(value = "/tester")
-    public String test() {return "tester";}
     @GetMapping(value = "/more")
     public String more(){
         return "more";
