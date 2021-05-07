@@ -18,9 +18,11 @@ async function fav(id) {
     let numLikes;
 
     if (getCookie('purecookieDismiss')) {
-        if ($(y).hasClass("liked")) {
-            $(y).html('<i class="heart far fa-heart"></i>');
-            $(y).removeClass("liked");
+        // if ($(y).hasClass("liked")) {
+        if (document.getElementById(id).classList.contains("fas")){
+            document.getElementById(id).className = "heart far fa-heart";
+            // $(y).html('class="heart far fa-heart"');
+            // $(y).removeClass("liked");
             eraseCookie(id);
 
 
@@ -45,8 +47,10 @@ async function fav(id) {
             });
 
         } else {
-            $(y).html('<i class="heart fas fa-heart"></i>');
-            $(y).addClass("liked");
+            document.getElementById(id).className = "heart fas fa-heart";
+
+            // $(y).html('<i class="heart fas fa-heart"></i>');
+            // $(y).addClass("liked");
             setCookie(id, '1', 365);
 
 

@@ -118,9 +118,9 @@
                         } else {
                             img = obj.fields.image_of_object.id;
                         }
-                        favClass = '<i class="heart far fa-heart"></i>';
+                        favClass = 'class="heart far fa-heart"';
                         if (getCookie(obj.recordid)){
-                            favClass = '<i class="heart fas fa-heart"></i>';
+                            favClass = 'class="heart fas fa-heart"';
 
                         }
 
@@ -129,7 +129,7 @@
                         return `
                         <div class="object">
                             <div class = "object-top">
-                                <span id = ${obj.recordid} onclick="fav(this.id)">${favClass} </span>
+                                <span id = ${obj.recordid} onclick="fav(this.id)" ${favClass}> </span>
                                 <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
                                 <h3 class="name-of-artist"> <strong>${obj.fields.artist}</strong></h3>
                                 <h4 class="artist-birth-death"> <strong>${artistBirthDeath}</strong></h4>
