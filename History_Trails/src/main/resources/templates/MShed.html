@@ -10,7 +10,8 @@
     <link th:href="@{/styles.css}" rel="stylesheet" />
     <link th:href="@{/navbar.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
-    <script src="cookies.js"></script>
+    <script src="../static/cookies.js" th:src="@{/cookies.js}" defer></script>
+    <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}" defer></script>
 
 </head>
 
@@ -140,8 +141,6 @@
     };
 </script>
 
-
-<script src="../static/sticky-header.js" th:src="@{/sticky-header.js}"></script>
 
 </body>
 </html>

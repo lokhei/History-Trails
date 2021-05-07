@@ -13,8 +13,9 @@
     <link th:href="@{/navbar.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="cookies.js"></script>
-    <script src="../static/favourites.js" th:src="@{/favourites.js}"></script>
+    <script src="../static/cookies.js" th:src="@{/cookies.js}" defer></script>
+    <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}" defer></script>
+    <script src="../static/favourites.js" th:src="@{/favourites.js}" defer></script>
 </head>
 <body>
 
@@ -178,9 +179,6 @@
     </div>
 </div>
 
-
-
-<script src="../static/sticky-header.js" th:src="@{/sticky-header.js}"></script>
 
 </body>
 </html>
