@@ -47,7 +47,6 @@ public class HistoryTrailsApplication {
 			objectLikes.put("recordid", recordid);
 			objectLikes.put("likes", 0);
 			likesList.add(objectLikes);
-
 		});
 
 		return likesList;
@@ -55,14 +54,12 @@ public class HistoryTrailsApplication {
 	}
 
 
-	public void createLikesfile(){
+	public static void createLikesfile(){
 
 		JSONArray likesList = initialiseLikes();
 		try (FileWriter file = new FileWriter("src/main/resources/json/likes.json")) {
-			//We can write any JSONArray or JSONObject instance to the file
 			file.write(likesList.toString());
 			file.flush();
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

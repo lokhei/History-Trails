@@ -40,4 +40,5 @@ public class HistoryTrailsApplicationTests {
 		assert(webcontroller.more().equals("more"));
 
 	}
+
 }
