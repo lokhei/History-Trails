@@ -1,9 +1,7 @@
-// --- Config --- //
 const purecookieTitle = "Cookies"; // Title
 const purecookieDesc = "This website uses cookies to ensure you get the best experience on our website"; // Description
 const purecookieLink = '<a href="more" target="_blank">Learn More</a>'; // Cookiepolicy link
 const purecookieButton = "Accept"; // Button text
-// ---        --- //
 
 
 function pureFadeIn(elem, display){

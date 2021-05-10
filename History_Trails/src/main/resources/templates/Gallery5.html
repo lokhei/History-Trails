@@ -13,6 +13,7 @@
     <link th:href="@{/navbar.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/gallery.js" th:src="@{/gallery.js}" async></script>
     <script src="../static/cookies.js" th:src="@{/cookies.js}" defer></script>
     <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}" defer></script>
     <script src="../static/favourites.js" th:src="@{/favourites.js}" defer></script>
@@ -53,87 +54,7 @@
     </div>
 
     <script>
-        function makeClickable(url) {
-            return '<a href="'+url+'" target="_blank">Additional Info</a>';
-        }
-    </script>
-
-    <script>
-        const charactersList = document.getElementById('charactersList');
-        const searchBar = document.getElementById('searchBar');
-        let hpCharacters = [];
-
-        searchBar.addEventListener('keyup', (e) => {
-            const searchString = e.target.value.toLowerCase();
-
-            const filteredCharacters = hpCharacters.filter((obj) => {
-                var artistName = (obj.fields.artist) ? obj.fields.artist : "";
-
-                return (
-                    obj.fields.title_of_object.toLowerCase().includes(searchString) ||
-                    artistName.toLowerCase().includes(searchString)
-                );
-            });
-            displayCharacters(filteredCharacters);
-        });
-
-        const loadCharacters = async () => {
-            try {
-                var res = await fetch('https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type');
-                hpCharacters = (await res.json()).records;
-                displayCharacters(hpCharacters);
-            } catch (err) {
-                console.error(err);
-            }
-        };
-
-        const displayCharacters = (out) => {
-            const htmlString = out
-                .map((obj) => {
-                    if (obj.fields.gallery == "Gallery 5 - Modern Art") {
-                        var img;
-                        var favClass;
-                        if(!obj.fields.image_of_object){
-                            img = obj.fields.no_of_object_in_order_anti_clockwise;
-                        } else{
-                            img = obj.fields.image_of_object.id;
-                        }
-                        favClass = 'class="heart far fa-heart"';
-                        if (getCookie(obj.recordid)){
-                            favClass = 'class="heart fas fa-heart"';
-
-                        }
-
-                        var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
-                        var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? makeClickable(obj.fields.link_to_additional_information) : "";
-                        return `
-                        <div class="object">
-                            <div class = "object-top">
-                                <span id = ${obj.recordid} onclick="fav(this.id)" ${favClass}> </span>
-                                <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
-                                    <h3 class="name-of-artist"> <strong>${obj.fields.artist}</strong></h3>
-                                    <h4 class="artist-birth-death"> <strong>${artistBirthDeath}</strong></h4>
-                                </div>
-                                <img class="object-image" alt = "placeholder" src="/images/gallery5/${img}.jpg"/>
-                                <div class = "object-info">
-                                    ${obj.fields.label}
-                                    <p> ${linkToAdditionalInformation}</p>
-                                </div>
-                            </div>
-                        `
-
-                    }
-                })
-                .join('');
-            charactersList.innerHTML = htmlString;
-        };
-
-        window.onload = function() {
-            loadCharacters().then(r => cookieConsent());
-        }
-
-
-
+        gallery = "Gallery 5 - Modern Art";
     </script>
 
     <div id="myModal" class="modal">
@@ -142,11 +63,11 @@
         </div>
 
     </div>
-    
+
 </div>
 
 <div class="footer">
-    <a href="more" target="_blank" title = "cookie policy" rel="noopener noreferrer" <button1 class="btn1 default">Our Cookie Policy</button1> </a>
+    <a href="more" target="_blank" title = "cookie policy" rel="noopener noreferrer"> <button1 class="btn1 default">Our Cookie Policy</button1> </a>
     <h3>Connect with us</h3>
 
     <div class="footer-row">
@@ -165,7 +86,7 @@
     <div class="footer-row">
 
         <div class = "footer-column">
-            <a href="https://www.instagram.com/bristolmuseums/?hl=en"target="_blank" title = "bristol museums instagram" rel="noopener noreferrer" class="fab fa-instagram"></a>
+            <a href="https://www.instagram.com/bristolmuseums/?hl=en" target="_blank" title = "bristol museums instagram" rel="noopener noreferrer" class="fab fa-instagram"></a>
             <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" target="_blank" title = "bristol museums Youtube" rel="noopener noreferrer" class="fab fa-youtube"></a>
         </div>
         <div class = "footer-column">
@@ -174,7 +95,7 @@
             <a href="https://twitter.com/mshedbristol" target="_blank" title = "MShed twitter" rel="noopener noreferrer" class="fab fa-twitter"></a>
         </div>
         <div class = "footer-column">
-            <a href="https://www.facebook.com/BristolMuseumandArtGallery/"target="_blank" title = "bristol museum and art gallery facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://www.facebook.com/BristolMuseumandArtGallery/ "target="_blank" title = "bristol museum and art gallery facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
             <a href="https://twitter.com/bristolmuseum" target="_blank" title = "bristol museum and art gallery twitter" rel="noopener noreferrer" class="fab fa-twitter "></a>
         </div>
     </div>

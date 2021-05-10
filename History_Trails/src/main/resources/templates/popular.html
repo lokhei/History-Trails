@@ -126,8 +126,8 @@
             charactersList.innerHTML = out
                 .map((obj) => {
                         if (topten.includes(obj.recordid)) {
-                            var img;
-                            var favClass;
+                            let img;
+                            let favClass;
                             if (!obj.fields.image_of_object) {
                                 if (obj.fields.gallery === "Gallery 5 - Modern Art") {
                                     img = "gallery5/" + obj.fields.no_of_object_in_order_anti_clockwise;
@@ -143,8 +143,8 @@
 
                             }
 
-                            var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
-                            var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? makeClickable(obj.fields.link_to_additional_information) : "";
+                            let artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
+                            let linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? makeClickable(obj.fields.link_to_additional_information) : "";
                             return `
                         <div class="object">
                             <div class = "object-top">
@@ -187,7 +187,7 @@
 
 
 <div class="footer">
-    <a href="more" target="_blank" title = "cookie policy" rel="noopener noreferrer" <button1 class="btn1 default">Our Cookie Policy</button1> </a>
+    <a href="more" target="_blank" title = "cookie policy" rel="noopener noreferrer"> <button1 class="btn1 default">Our Cookie Policy</button1> </a>
     <h3>Connect with us</h3>
 
     <div class="footer-row">
@@ -206,7 +206,7 @@
     <div class="footer-row">
 
         <div class = "footer-column">
-            <a href="https://www.instagram.com/bristolmuseums/?hl=en"target="_blank" title = "bristol museums instagram" rel="noopener noreferrer" class="fab fa-instagram"></a>
+            <a href="https://www.instagram.com/bristolmuseums/?hl=en" target="_blank" title = "bristol museums instagram" rel="noopener noreferrer" class="fab fa-instagram"></a>
             <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" target="_blank" title = "bristol museums Youtube" rel="noopener noreferrer" class="fab fa-youtube"></a>
         </div>
         <div class = "footer-column">
@@ -215,7 +215,7 @@
             <a href="https://twitter.com/mshedbristol" target="_blank" title = "MShed twitter" rel="noopener noreferrer" class="fab fa-twitter"></a>
         </div>
         <div class = "footer-column">
-            <a href="https://www.facebook.com/BristolMuseumandArtGallery/"target="_blank" title = "bristol museum and art gallery facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://www.facebook.com/BristolMuseumandArtGallery/" target="_blank" title = "bristol museum and art gallery facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
             <a href="https://twitter.com/bristolmuseum" target="_blank" title = "bristol museum and art gallery twitter" rel="noopener noreferrer" class="fab fa-twitter "></a>
         </div>
     </div>

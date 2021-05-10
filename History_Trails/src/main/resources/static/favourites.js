@@ -14,7 +14,7 @@ async function fetchLikes(id) {
 
 
 async function fav(id) {
-    let y = "#" + id;
+    let toSend;
     let numLikes;
 
     if (getCookie('purecookieDismiss')) {
@@ -25,7 +25,7 @@ async function fav(id) {
 
             numLikes = (await fetchLikes(id));
 
-            var toSend = {
+            toSend = {
                 recordid: id,
                 likes: numLikes - 1
             };
@@ -53,7 +53,7 @@ async function fav(id) {
 
             numLikes = (await fetchLikes(id));
 
-            var toSend = {
+            toSend = {
                 recordid: id,
                 likes: numLikes + 1
             };
@@ -78,7 +78,7 @@ async function fav(id) {
 
         }
     } else {
-        var modal = document.getElementById("myModal");
+        const modal = document.getElementById("myModal");
         modal.style.display = "block";
         setTimeout(function () {
             $(modal).hide();

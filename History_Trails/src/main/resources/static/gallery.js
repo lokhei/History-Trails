@@ -61,8 +61,8 @@ const displayCharacters = (out) => {
 
                 }
 
-                var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
-                var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? makeClickable(obj.fields.link_to_additional_information) : "";
+                let artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
+                let linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? makeClickable(obj.fields.link_to_additional_information) : "";
                 return `
                         <div class="object">
                             <div class = "object-top">
