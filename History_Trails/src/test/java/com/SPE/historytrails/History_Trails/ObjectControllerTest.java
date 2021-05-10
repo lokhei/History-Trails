@@ -107,27 +107,6 @@ public class ObjectControllerTest {
                 .andExpect(content().string(expectedJsonResponse));
     }
 
-    @Test
-    public void testPutLikesDifferentID() throws Exception {
-
-        Objects object1 = new Objects("1", 5);
-        Objects object2 = new Objects("2", 10);
-
-        Mockito.when(objectService.listOne("1")).thenReturn(object1);
-
-        String url = "/objects";
-
-        String expectedJsonResponse = objectMapper.writeValueAsString(object1);
-
-        this.mockMvc.perform(
-                put(url)
-                        .param("id", "1")
-                        .contentType("application/json")
-                        .content(objectMapper.writeValueAsString(object1)))
-                .andExpect(status().isOk())
-                .andExpect(content().string(expectedJsonResponse));
-    }
-
 
 
 }
