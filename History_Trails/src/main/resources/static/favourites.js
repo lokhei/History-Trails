@@ -18,11 +18,8 @@ async function fav(id) {
     let numLikes;
 
     if (getCookie('purecookieDismiss')) {
-        // if ($(y).hasClass("liked")) {
         if (document.getElementById(id).classList.contains("fas")){
             document.getElementById(id).className = "heart far fa-heart";
-            // $(y).html('class="heart far fa-heart"');
-            // $(y).removeClass("liked");
             eraseCookie(id);
 
 
@@ -34,10 +31,14 @@ async function fav(id) {
             };
 
             $.ajax({
-                type: 'POST',
+                type: 'PUT',
                 url: "/objects?id=" + id,
-                data: toSend,
+                data: JSON.stringify(toSend),
                 dataType: "json",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
                 success: function (data) {
                     console.log("Success", data);
                 },
@@ -48,16 +49,9 @@ async function fav(id) {
 
         } else {
             document.getElementById(id).className = "heart fas fa-heart";
-
-            // $(y).html('<i class="heart fas fa-heart"></i>');
-            // $(y).addClass("liked");
             setCookie(id, '1', 365);
 
-
-
             numLikes = (await fetchLikes(id));
-
-
 
             var toSend = {
                 recordid: id,
@@ -65,10 +59,14 @@ async function fav(id) {
             };
 
             $.ajax({
-                type: 'POST',
+                type: 'PUT',
                 url: "/objects?id=" + id,
-                data: toSend,
+                data: JSON.stringify(toSend),
                 dataType: "json",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
                 success: function (data) {
                     console.log("Success", data);
                 },

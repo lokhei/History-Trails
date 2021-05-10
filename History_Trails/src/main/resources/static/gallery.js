@@ -45,7 +45,7 @@ const loadCharacters = async () => {
 
 
 const displayCharacters = (out) => {
-    const htmlString = out
+    charactersList.innerHTML = out
         .map((obj) => {
             if (obj.fields.gallery === gallery) {
                 var img;
@@ -56,7 +56,7 @@ const displayCharacters = (out) => {
                     img = obj.fields.image_of_object.id;
                 }
                 favClass = 'class="heart far fa-heart"';
-                if (getCookie(obj.recordid)){
+                if (getCookie(obj.recordid)) {
                     favClass = 'class="heart fas fa-heart"';
 
                 }
@@ -81,7 +81,6 @@ const displayCharacters = (out) => {
             }
         })
         .join('');
-    charactersList.innerHTML = htmlString;
 };
 
 

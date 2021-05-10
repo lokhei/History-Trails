@@ -1,14 +1,10 @@
 package com.SPE.historytrails.History_Trails.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 
 @Data
-@AllArgsConstructor
 @Entity
 public class Objects {
 
@@ -17,25 +13,50 @@ public class Objects {
     private int likes;
 
 
+    public Objects(String recordid, int likes) {
+        this.recordid = recordid;
+        this.likes = likes;
+    }
+
+
+    public Objects(String recordid) {
+        this.recordid = recordid;
+    }
+
 
 
     /**
-     * likes of object.
+     * get the number of likes of object
      * @return likes
      */
     public int getLikes() {
        return likes;
     }
+
+
     /**
      * update likes of object.
-     * @param likes
+     * @param likes number of likes to set Objects to
      */
     public void setLikes(int likes) {
-        this.likes = likes;
+        if (likes >= 0) this.likes = likes;
+    }
+
+
+    /**
+     * get the number of recordid of object
+     * @return likes
+     */
+    public String getRecordid() {
+        return recordid;
     }
 
 
     public Objects() {}
+
+
+
+
 
 }
 

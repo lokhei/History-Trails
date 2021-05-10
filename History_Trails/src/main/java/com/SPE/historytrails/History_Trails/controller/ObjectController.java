@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/objects")
 public class ObjectController {
 
-    private ObjectService objectService;
+    private final ObjectService objectService;
 
     public ObjectController(ObjectService objectService) {
         this.objectService = objectService;
@@ -20,20 +20,19 @@ public class ObjectController {
         return objectService.list();
     }
 
-    @RequestMapping(value="",method = RequestMethod.GET  )
-    @ResponseBody
-    public Objects getLikes(@RequestParam(defaultValue="b2b810de148a48a51ddd54ae124389c6831ec3bc")String id )  {
+    @GetMapping(value="")
+    public Objects getLikes(@RequestParam()String id )  {
         return objectService.listOne(id);
     }
 
 
-    @RequestMapping(value="",method = RequestMethod.POST )
-    @ResponseBody
-    public Objects updateLikes(@RequestParam(defaultValue="b2b810de148a48a51ddd54ae124389c6831ec3bc")String id, Objects newobject )  {
-        Objects object = objectService.listOne(id);
-        object.setLikes(newobject.getLikes());
-        objectService.save(object);
+    @PutMapping(value="")
+    public Objects updateLikes(@RequestParam()String id, @RequestBody Objects newObject )  throws Exception{
+        if ( !id.equals(newObject.getRecordid())){throw new Exception("Ids don't match");}
 
+        Objects object = objectService.listOne(id);
+        object.setLikes(newObject.getLikes());
+        objectService.save(object);
 
         return objectService.listOne(id);
     }

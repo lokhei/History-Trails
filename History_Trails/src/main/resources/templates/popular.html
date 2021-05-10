@@ -123,30 +123,29 @@
 
 
         const displayCharacters = (out) => {
-            const htmlString = out
+            charactersList.innerHTML = out
                 .map((obj) => {
-
-                    if (topten.includes(obj.recordid)){
-                        var img;
-                        var favClass;
-                        if (!obj.fields.image_of_object) {
-                            if (obj.fields.gallery == "Gallery 5 - Modern Art") {
-                                img = "gallery5/" + obj.fields.no_of_object_in_order_anti_clockwise;
-                            }else{
-                                img = obj.recordid;
+                        if (topten.includes(obj.recordid)) {
+                            var img;
+                            var favClass;
+                            if (!obj.fields.image_of_object) {
+                                if (obj.fields.gallery === "Gallery 5 - Modern Art") {
+                                    img = "gallery5/" + obj.fields.no_of_object_in_order_anti_clockwise;
+                                } else {
+                                    img = obj.recordid;
+                                }
+                            } else {
+                                img = obj.fields.image_of_object.id;
                             }
-                        } else {
-                            img = obj.fields.image_of_object.id;
-                        }
-                        favClass = 'class="heart far fa-heart"';
-                        if (getCookie(obj.recordid)){
-                            favClass = 'class="heart fas fa-heart"';
+                            favClass = 'class="heart far fa-heart"';
+                            if (getCookie(obj.recordid)) {
+                                favClass = 'class="heart fas fa-heart"';
 
-                        }
+                            }
 
-                        var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
-                        var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? makeClickable(obj.fields.link_to_additional_information) : "";
-                        return `
+                            var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
+                            var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? makeClickable(obj.fields.link_to_additional_information) : "";
+                            return `
                         <div class="object">
                             <div class = "object-top">
                                 <span id = ${obj.recordid} onclick="fav(this.id)" ${favClass}> </span>
@@ -162,10 +161,10 @@
                             </div>
                         </div>
                     `
+                        }
                     }
-                })
+                )
                 .join('');
-            charactersList.innerHTML = htmlString;
         };
 
 
