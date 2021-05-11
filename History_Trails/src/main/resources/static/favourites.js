@@ -17,6 +17,8 @@ async function fav(id) {
     let toSend;
     let numLikes;
 
+    let token = $("meta[name='_csrf']").attr("content");
+
     if (getCookie('purecookieDismiss')) {
         if (document.getElementById(id).classList.contains("fas")){
             document.getElementById(id).className = "heart far fa-heart";
@@ -27,7 +29,8 @@ async function fav(id) {
 
             toSend = {
                 recordid: id,
-                likes: numLikes - 1
+                likes: numLikes - 1,
+                "X-CSRF-TOKEN": token
             };
 
             $.ajax({
@@ -37,13 +40,16 @@ async function fav(id) {
                 dataType: "json",
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    "X-CSRF-TOKEN": token
+
                 },
                 success: function (data) {
                     console.log("Success", data);
                 },
                 error: function (data) {
                     console.log("Failure", data);
+
                 },
             });
 
@@ -65,7 +71,8 @@ async function fav(id) {
                 dataType: "json",
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    "X-CSRF-TOKEN": token
                 },
                 success: function (data) {
                     console.log("Success", data);
