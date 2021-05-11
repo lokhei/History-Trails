@@ -498,8 +498,6 @@ img {vertical-align: middle;}
   padding: 10px 20px;
   font-size: 12px;
   cursor: pointer;
-  display: right;
-  position: right;
   text-align: right;
   float: right;
 }
@@ -530,8 +528,6 @@ img {vertical-align: middle;}
   padding: 5px 10px;
   font-size: 6px;
   cursor: pointer;
-  display: right;
-  position: right;
   text-align: right;
   float: right;
 }
