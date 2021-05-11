@@ -89,7 +89,7 @@ describe('Testing API...', function() {
             }
         }
         for (var i = 0; i < urls.length; i++) {
-            const request = await fetch(urls[0]);
+            const request = await fetch(urls[i]);
             expect(request.status).toBe(200);
         }
         done();
