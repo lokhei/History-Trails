@@ -10,7 +10,7 @@ public class WebController {
 
     @GetMapping(value = "/")
     public String index(){ return "index"; }
-    @GetMapping(value = "/MShed")
+    @GetMapping(value = "/BristolArtGallery")
     public String MShed(){
         return "MShed";
     }
