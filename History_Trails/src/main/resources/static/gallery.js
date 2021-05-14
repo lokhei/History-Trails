@@ -98,6 +98,6 @@ const displayCharacters = (out) => {
 
 
 window.onload = function() {
-    loadCharacters().then(() => cookieConsent());
+    loadCharacters().then(() => {});
 }
 
