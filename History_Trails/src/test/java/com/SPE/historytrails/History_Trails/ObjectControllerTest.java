@@ -9,6 +9,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
+
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -102,9 +104,27 @@ public class ObjectControllerTest {
                 put(url)
                 .param("id", "1")
                 .contentType("application/json")
-                .content(objectMapper.writeValueAsString(object1)))
+                .content(objectMapper.writeValueAsString(object1))
+                .with(csrf()))
                 .andExpect(status().isOk())
                 .andExpect(content().string(expectedJsonResponse));
+    }
+
+    @Test
+    public void testInvalidCSRFToken() throws Exception {
+
+        Objects object1 = new Objects("1", 5);
+        Mockito.when(objectService.listOne("1")).thenReturn(object1);
+
+        String url = "/objects";
+
+
+        this.mockMvc.perform(
+                put(url)
+                        .param("id", "1")
+                        .contentType("application/json")
+                        .content(objectMapper.writeValueAsString(object1)))
+                .andExpect(status().is(403));
     }
 
 
