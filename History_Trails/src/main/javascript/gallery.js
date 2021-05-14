@@ -3,6 +3,18 @@ function makeClickable(url) {
     return String.prototype.link ? "Additional Information".link(url) : '<a href="'+url+'">'+url+'</a>';
 }
 
+function testLink(string) {
+    let url;
+
+    try {
+        url = new URL(string);
+    } catch (_) {
+        return false;
+    }
+    return url.protocol === "http:" || url.protocol === "https:";
+
+}
+
 
 const charactersList = document.getElementById('charactersList');
 const searchBar = document.getElementById('searchBar');
@@ -48,8 +60,8 @@ const displayCharacters = (out) => {
     const htmlString = out
         .map((obj) => {
             if (obj.fields.gallery === gallery) {
-                var img;
-                var favClass;
+                let img;
+                let favClass;
                 if (!obj.fields.image_of_object) {
                     img = obj.recordid;
                 } else {
@@ -61,8 +73,8 @@ const displayCharacters = (out) => {
 
                 }
 
-                var artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
-                var linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? makeClickable(obj.fields.link_to_additional_information) : "";
+                const artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
+                let linkToAdditionalInformation = (obj.fields.link_to_additional_information && testLink(obj.fields.link_to_additional_information)) ? makeClickable(obj.fields.link_to_additional_information) : "";
                 return `
                         <div class="object">
                             <div class = "object-top">

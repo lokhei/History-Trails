@@ -3,6 +3,18 @@ function makeClickable(url) {
     return '<a href="'+url+'" target="_blank">Additional Info</a>';
 }
 
+function testLink(string) {
+    let url;
+
+    try {
+        url = new URL(string);
+    } catch (_) {
+        return false;
+    }
+    return url.protocol === "http:" || url.protocol === "https:";
+
+}
+
 
 const charactersList = document.getElementById('charactersList');
 const searchBar = document.getElementById('searchBar');
@@ -12,7 +24,7 @@ searchBar.addEventListener('keyup', (e) => {
     const searchString = e.target.value.toLowerCase();
 
     const filteredCharacters = hpCharacters.filter((obj) => {
-        var artistName = (obj.fields.artist) ? obj.fields.artist : "";
+        const artistName = (obj.fields.artist) ? obj.fields.artist : "";
 
         return (
             obj.fields.title_of_object.toLowerCase().includes(searchString) ||
@@ -48,8 +60,8 @@ const displayCharacters = (out) => {
     charactersList.innerHTML = out
         .map((obj) => {
             if (obj.fields.gallery === gallery) {
-                var img;
-                var favClass;
+                let img;
+                let favClass;
                 if (!obj.fields.image_of_object) {
                     img = obj.recordid;
                 } else {
@@ -62,7 +74,8 @@ const displayCharacters = (out) => {
                 }
 
                 let artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
-                let linkToAdditionalInformation = (obj.fields.link_to_additional_information) ? makeClickable(obj.fields.link_to_additional_information) : "";
+
+                let linkToAdditionalInformation = (obj.fields.link_to_additional_information && testLink(obj.fields.link_to_additional_information)) ? makeClickable(obj.fields.link_to_additional_information) : "";
                 return `
                         <div class="object">
                             <div class = "object-top">
@@ -85,6 +98,6 @@ const displayCharacters = (out) => {
 
 
 window.onload = function() {
-    loadCharacters().then(r => cookieConsent());
+    loadCharacters().then(() => cookieConsent());
 }
 
