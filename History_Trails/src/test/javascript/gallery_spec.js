@@ -29,16 +29,16 @@ describe('Testing API...', function() {
         let objectsGallery4 = [];
         let objectsGallery5 = [];
         for (var i = 0; i < 115; i++) {
-            if (result[i].fields.gallery == "Gallery 2") {
+            if (result[i].fields.gallery === "Gallery 2") {
                 objectsGallery2.push(result[i]);
             }
-            else if (result[i].fields.gallery == "Gallery 3 - European Old Masters") {
+            else if (result[i].fields.gallery === "Gallery 3 - European Old Masters") {
                 objectsGallery3.push(result[i]);
             }
-            else if (result[i].fields.gallery == "Gallery 4") {
+            else if (result[i].fields.gallery === "Gallery 4") {
                 objectsGallery4.push(result[i]);
             }
-            else if (result[i].fields.gallery == "Gallery 5 - Modern Art") {
+            else if (result[i].fields.gallery === "Gallery 5 - Modern Art") {
                 objectsGallery5.push(result[i]);
             }
 
@@ -79,7 +79,7 @@ describe('Testing API...', function() {
         const result = await fetchObjects();
         let objectsGallery2 = [];
         for (var i = 0; i < 115; i++) {
-            if (result[i].fields.gallery == "Gallery 2") {
+            if (result[i].fields.gallery === "Gallery 2") {
                 objectsGallery2.push(result[i]);
             }
         }
@@ -91,7 +91,7 @@ describe('Testing API...', function() {
         const result = await fetchObjects();
         let objectsGallery3 = [];
         for (var i = 0; i < 115; i++) {
-            if (result[i].fields.gallery == "Gallery 3 - European Old Masters") {
+            if (result[i].fields.gallery === "Gallery 3 - European Old Masters") {
                 objectsGallery3.push(result[i]);
             }
         }
@@ -103,7 +103,7 @@ describe('Testing API...', function() {
         const result = await fetchObjects();
         let objectsGallery4 = [];
         for (var i = 0; i < 115; i++) {
-            if (result[i].fields.gallery == "Gallery 4") {
+            if (result[i].fields.gallery === "Gallery 4") {
                 objectsGallery4.push(result[i]);
             }
         }
@@ -115,7 +115,7 @@ describe('Testing API...', function() {
         const result = await fetchObjects();
         let objectsGallery5 = [];
         for (var i = 0; i < 115; i++) {
-            if (result[i].fields.gallery == "Gallery 5 - Modern Art") {
+            if (result[i].fields.gallery === "Gallery 5 - Modern Art") {
                 objectsGallery5.push(result[i]);
             }
         }
