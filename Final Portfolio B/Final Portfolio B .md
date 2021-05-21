@@ -423,7 +423,7 @@ After our minimal viable product was released, each team member was tasked with 
 We chose to conduct interviews as it allowed us to collect detailed information allowing us to better understand our users’ needs. One of the major criticisms of our web app was that on different devices, our design looked different and in some cases it was hard to read and navigate. Additionally, many people said our website, in particular the gallery pages and item pages were not visually appealing with the design being bland. Users indicated their displeasure with the side navigation bar and said they would prefer a top navigation bar. Due to our minimal viable product being released during lockdown when museums were closed, several interviewees expressed a desire to be able to tour the museums virtually. Thus, our major focuses for our Beta release were to fix the responsiveness of our web app to ensure it looked good on all screen sizes, allow users to take a virtual tour of the museum and make necessary changes to the design of the website. 
 
 
-![](Aspose.Words.43d86cb4-6d90-403a-a87b-0a781d874c47.010.png)![](Aspose.Words.43d86cb4-6d90-403a-a87b-0a781d874c47.011.png)![](Aspose.Words.43d86cb4-6d90-403a-a87b-0a781d874c47.012.png)
+![](Aspose.Words.43d86cb4-6d90-403a-a87b-0a781d874c47.010.png)
 
 
 
