@@ -19,8 +19,8 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 public class QRCodeGenerator {
 
     public static void main(String[] args) throws WriterException, IOException {
-        String qrCodeText = "http://3.210.116.142:8080/MShed";
-        String filePath = "MShed.png";
+        String qrCodeText = "http://bristolmuseumsguide.spe.cs.bris.ac.uk:8080/Gallery5";
+        String filePath = "Gallery5.png";
         int size = 125;
         String fileType = "png";
         File qrFile = new File(filePath);
