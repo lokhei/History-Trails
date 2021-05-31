@@ -13,7 +13,7 @@ Web App can be found here: http://bristolmuseumsguide.spe.cs.bris.ac.uk:8080
 
 **Organisation:** Bristol Museum and Culture
 
-Since Covid, Bristol Museum and M Shed have had to switch off their legacy touch screen digital interpretation system for galleries – for safety reasons. Our visitors to art galleries may wish to find out more information about the objects an paintings on display. We have published this information to the Bristol City Council Open data platform – which has an API for web apps to retrieve the data and images. We would like to be able to offer the visitors a way to browse this information using their mobile phones. We already have an updated pathway to publish the data feed, but we need an interface and web app that we can direct visitors in. The use case being a visitor looking at a panting wishes to find out more about that painting.
+Since Covid, Bristol Museum and M Shed have had to switch off their legacy touch screen digital interpretation system for galleries – for safety reasons. Our visitors to art galleries may wish to find out more information about the objects and paintings on display. We have published this information to the Bristol City Council Open data platform – which has an API for web apps to retrieve the data and images. We would like to be able to offer the visitors a way to browse this information using their mobile phones. We already have an updated pathway to publish the data feed, but we need an interface and web app that we can direct visitors in. The use case being a visitor looking at an exhibit wishes to find out more about it.
 
 The open data set is available here: https://opendata.bristol.gov.uk/explore/dataset/open-data-gallery-3-european-old-masters/information/
 
