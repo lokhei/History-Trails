@@ -5,7 +5,6 @@ Coursework for Software Product Engineering COMS20006
 
 Group project to develop a web app for visitors at the Bristol Museum and M Shed to find out more information about the exhibits, as a replacement for their legacy touch screen digital interpretation system. 
 
-Web App can be found here: http://bristolmuseumsguide.spe.cs.bris.ac.uk:8080
 
 ## Project Proposal:
 
